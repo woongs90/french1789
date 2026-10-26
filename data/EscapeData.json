@@ -1,0 +1,7532 @@
+{
+ "title": "파리의 견습생 : 1789~1815",
+ "gameTitle": "파리의 견습생 : 1789~1815",
+ "titleImage": "France_Title",
+ "titleText": false,
+ "titlePromptY": 0.93,
+ "titleBgm": "France_Title",
+ "bgm": "France_Street",
+ "timeLimit": 0,
+ "hints": 10,
+ "hp": 3,
+ "wrongPenalty": 0,
+ "startRoom": "street",
+ "recordTitle": "혁명의 26년을 신문에 담았다!",
+ "archives": [
+  "treasure_enlight",
+  "treasure_marseillaise",
+  "flyer1",
+  "flyer2",
+  "flyer3",
+  "flyer4",
+  "flyer5",
+  "flyer6"
+ ],
+ "characters": [
+  {
+   "label": "피에르 (남학생)",
+   "image": "$f_boy",
+   "index": 0,
+   "vars": {
+    "name": "피에르"
+   }
+  },
+  {
+   "label": "마들렌 (여학생)",
+   "image": "$f_girl",
+   "index": 0,
+   "vars": {
+    "name": "마들렌"
+   }
+  }
+ ],
+ "intro": [
+  {
+   "movie": "intro_france"
+  },
+  {
+   "selectCharacter": true,
+   "question": "(주인공을 골라 주세요. 파리 인쇄소의 열네 살 견습생이에요.)"
+  },
+  {
+   "if": {
+    "progressSaved": true
+   },
+   "then": [
+    {
+     "choice": [
+      "이어서 하기 (이 기기에 저장된 기록)",
+      "처음부터 하기",
+      "이어하기 번호 입력"
+     ],
+     "question": "지난번 기록이 있어요. 어떻게 할까요?",
+     "on1": [
+      {
+       "progressLoad": true
+      },
+      {
+       "effect": "sparkle",
+       "text": "기록을 불러왔다! 지난번에 끝낸 장까지 이어서 시작해요."
+      },
+      {
+       "picture": "cu_rules_fiction",
+       "speaker": "안내",
+       "text": "다시 알려 줄게요. 이 게임에는 실제 역사와 꾸민 이야기가 함께 나와요."
+      }
+     ],
+     "on2": [
+      {
+       "progressClear": true
+      },
+      {
+       "picture": "cu_rules_fiction",
+       "speaker": "안내",
+       "text": "시작하기 전에! 이 게임에는 실제 역사와, 재미를 위해 꾸민 이야기가 함께 나와요."
+      },
+      {
+       "picture": "cu_fiction_people",
+       "speaker": "안내",
+       "text": "주인공, 뒤부아 아저씨, 폴, 클레르는 꾸민 인물이에요. 실제 인물도 나오지만 그 사람들이 하는 말은 꾸민 대사예요. 사건과 연도는 사실이에요."
+      },
+      {
+       "picture": "cu_memory_info",
+       "speaker": "안내",
+       "text": "화면이 옛날 사진처럼 바뀌면 '회상 장면'이에요. 주인공이 직접 보지 못한 중요한 장면을, 들은 이야기로 떠올리는 거예요."
+      },
+      {
+       "picture": "cu_save_info",
+       "speaker": "안내",
+       "text": "장이 끝날 때마다 이 기기에 자동 저장되고, '이어하기 번호'도 알려 줘요. 번호를 적어 두면 다른 컴퓨터에서도 이어 할 수 있어요."
+      }
+     ],
+     "on3": [
+      {
+       "lock": {
+        "progress": true,
+        "digits": 4,
+        "question": "이어하기 번호 4자리를 입력하세요. (장이 끝날 때 알려 준 번호)"
+       },
+       "success": [
+        {
+         "effect": "sparkle",
+         "text": "기록을 불러왔다! 지난번에 끝낸 장까지 이어서 시작해요."
+        },
+        {
+         "picture": "cu_rules_fiction",
+         "speaker": "안내",
+         "text": "다시 알려 줄게요. 이 게임에는 실제 역사와 꾸민 이야기가 함께 나와요."
+        }
+       ],
+       "fail": [
+        {
+         "text": "번호가 맞지 않아요. 한 번 더 입력해 볼까요?",
+         "speaker": "안내"
+        },
+        {
+         "lock": {
+          "progress": true,
+          "digits": 4,
+          "question": "이어하기 번호 4자리를 입력하세요. (장이 끝날 때 알려 준 번호)"
+         },
+         "success": [
+          {
+           "effect": "sparkle",
+           "text": "기록을 불러왔다! 지난번에 끝낸 장까지 이어서 시작해요."
+          },
+          {
+           "picture": "cu_rules_fiction",
+           "speaker": "안내",
+           "text": "다시 알려 줄게요. 이 게임에는 실제 역사와 꾸민 이야기가 함께 나와요."
+          }
+         ],
+         "fail": [
+          {
+           "text": "번호가 맞지 않아서 처음부터 시작할게요.",
+           "speaker": "안내"
+          },
+          {
+           "progressClear": true
+          },
+          {
+           "picture": "cu_rules_fiction",
+           "speaker": "안내",
+           "text": "시작하기 전에! 이 게임에는 실제 역사와, 재미를 위해 꾸민 이야기가 함께 나와요."
+          },
+          {
+           "picture": "cu_fiction_people",
+           "speaker": "안내",
+           "text": "주인공, 뒤부아 아저씨, 폴, 클레르는 꾸민 인물이에요. 실제 인물도 나오지만 그 사람들이 하는 말은 꾸민 대사예요. 사건과 연도는 사실이에요."
+          },
+          {
+           "picture": "cu_memory_info",
+           "speaker": "안내",
+           "text": "화면이 옛날 사진처럼 바뀌면 '회상 장면'이에요. 주인공이 직접 보지 못한 중요한 장면을, 들은 이야기로 떠올리는 거예요."
+          },
+          {
+           "picture": "cu_save_info",
+           "speaker": "안내",
+           "text": "장이 끝날 때마다 이 기기에 자동 저장되고, '이어하기 번호'도 알려 줘요. 번호를 적어 두면 다른 컴퓨터에서도 이어 할 수 있어요."
+          }
+         ],
+         "cancel": [
+          {
+           "text": "처음부터 시작할게요.",
+           "speaker": "안내"
+          },
+          {
+           "progressClear": true
+          },
+          {
+           "picture": "cu_rules_fiction",
+           "speaker": "안내",
+           "text": "시작하기 전에! 이 게임에는 실제 역사와, 재미를 위해 꾸민 이야기가 함께 나와요."
+          },
+          {
+           "picture": "cu_fiction_people",
+           "speaker": "안내",
+           "text": "주인공, 뒤부아 아저씨, 폴, 클레르는 꾸민 인물이에요. 실제 인물도 나오지만 그 사람들이 하는 말은 꾸민 대사예요. 사건과 연도는 사실이에요."
+          },
+          {
+           "picture": "cu_memory_info",
+           "speaker": "안내",
+           "text": "화면이 옛날 사진처럼 바뀌면 '회상 장면'이에요. 주인공이 직접 보지 못한 중요한 장면을, 들은 이야기로 떠올리는 거예요."
+          },
+          {
+           "picture": "cu_save_info",
+           "speaker": "안내",
+           "text": "장이 끝날 때마다 이 기기에 자동 저장되고, '이어하기 번호'도 알려 줘요. 번호를 적어 두면 다른 컴퓨터에서도 이어 할 수 있어요."
+          }
+         ]
+        }
+       ],
+       "cancel": [
+        {
+         "text": "처음부터 시작할게요.",
+         "speaker": "안내"
+        },
+        {
+         "progressClear": true
+        },
+        {
+         "picture": "cu_rules_fiction",
+         "speaker": "안내",
+         "text": "시작하기 전에! 이 게임에는 실제 역사와, 재미를 위해 꾸민 이야기가 함께 나와요."
+        },
+        {
+         "picture": "cu_fiction_people",
+         "speaker": "안내",
+         "text": "주인공, 뒤부아 아저씨, 폴, 클레르는 꾸민 인물이에요. 실제 인물도 나오지만 그 사람들이 하는 말은 꾸민 대사예요. 사건과 연도는 사실이에요."
+        },
+        {
+         "picture": "cu_memory_info",
+         "speaker": "안내",
+         "text": "화면이 옛날 사진처럼 바뀌면 '회상 장면'이에요. 주인공이 직접 보지 못한 중요한 장면을, 들은 이야기로 떠올리는 거예요."
+        },
+        {
+         "picture": "cu_save_info",
+         "speaker": "안내",
+         "text": "장이 끝날 때마다 이 기기에 자동 저장되고, '이어하기 번호'도 알려 줘요. 번호를 적어 두면 다른 컴퓨터에서도 이어 할 수 있어요."
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "else": [
+    {
+     "choice": [
+      "처음부터 하기",
+      "이어하기 번호 입력"
+     ],
+     "question": "어떻게 시작할까요?",
+     "on1": [
+      {
+       "picture": "cu_rules_fiction",
+       "speaker": "안내",
+       "text": "시작하기 전에! 이 게임에는 실제 역사와, 재미를 위해 꾸민 이야기가 함께 나와요."
+      },
+      {
+       "picture": "cu_fiction_people",
+       "speaker": "안내",
+       "text": "주인공, 뒤부아 아저씨, 폴, 클레르는 꾸민 인물이에요. 실제 인물도 나오지만 그 사람들이 하는 말은 꾸민 대사예요. 사건과 연도는 사실이에요."
+      },
+      {
+       "picture": "cu_memory_info",
+       "speaker": "안내",
+       "text": "화면이 옛날 사진처럼 바뀌면 '회상 장면'이에요. 주인공이 직접 보지 못한 중요한 장면을, 들은 이야기로 떠올리는 거예요."
+      },
+      {
+       "picture": "cu_save_info",
+       "speaker": "안내",
+       "text": "장이 끝날 때마다 이 기기에 자동 저장되고, '이어하기 번호'도 알려 줘요. 번호를 적어 두면 다른 컴퓨터에서도 이어 할 수 있어요."
+      }
+     ],
+     "on2": [
+      {
+       "lock": {
+        "progress": true,
+        "digits": 4,
+        "question": "이어하기 번호 4자리를 입력하세요. (장이 끝날 때 알려 준 번호)"
+       },
+       "success": [
+        {
+         "effect": "sparkle",
+         "text": "기록을 불러왔다! 지난번에 끝낸 장까지 이어서 시작해요."
+        },
+        {
+         "picture": "cu_rules_fiction",
+         "speaker": "안내",
+         "text": "다시 알려 줄게요. 이 게임에는 실제 역사와 꾸민 이야기가 함께 나와요."
+        }
+       ],
+       "fail": [
+        {
+         "text": "번호가 맞지 않아요. 한 번 더 입력해 볼까요?",
+         "speaker": "안내"
+        },
+        {
+         "lock": {
+          "progress": true,
+          "digits": 4,
+          "question": "이어하기 번호 4자리를 입력하세요. (장이 끝날 때 알려 준 번호)"
+         },
+         "success": [
+          {
+           "effect": "sparkle",
+           "text": "기록을 불러왔다! 지난번에 끝낸 장까지 이어서 시작해요."
+          },
+          {
+           "picture": "cu_rules_fiction",
+           "speaker": "안내",
+           "text": "다시 알려 줄게요. 이 게임에는 실제 역사와 꾸민 이야기가 함께 나와요."
+          }
+         ],
+         "fail": [
+          {
+           "text": "번호가 맞지 않아서 처음부터 시작할게요.",
+           "speaker": "안내"
+          },
+          {
+           "progressClear": true
+          },
+          {
+           "picture": "cu_rules_fiction",
+           "speaker": "안내",
+           "text": "시작하기 전에! 이 게임에는 실제 역사와, 재미를 위해 꾸민 이야기가 함께 나와요."
+          },
+          {
+           "picture": "cu_fiction_people",
+           "speaker": "안내",
+           "text": "주인공, 뒤부아 아저씨, 폴, 클레르는 꾸민 인물이에요. 실제 인물도 나오지만 그 사람들이 하는 말은 꾸민 대사예요. 사건과 연도는 사실이에요."
+          },
+          {
+           "picture": "cu_memory_info",
+           "speaker": "안내",
+           "text": "화면이 옛날 사진처럼 바뀌면 '회상 장면'이에요. 주인공이 직접 보지 못한 중요한 장면을, 들은 이야기로 떠올리는 거예요."
+          },
+          {
+           "picture": "cu_save_info",
+           "speaker": "안내",
+           "text": "장이 끝날 때마다 이 기기에 자동 저장되고, '이어하기 번호'도 알려 줘요. 번호를 적어 두면 다른 컴퓨터에서도 이어 할 수 있어요."
+          }
+         ],
+         "cancel": [
+          {
+           "text": "처음부터 시작할게요.",
+           "speaker": "안내"
+          },
+          {
+           "progressClear": true
+          },
+          {
+           "picture": "cu_rules_fiction",
+           "speaker": "안내",
+           "text": "시작하기 전에! 이 게임에는 실제 역사와, 재미를 위해 꾸민 이야기가 함께 나와요."
+          },
+          {
+           "picture": "cu_fiction_people",
+           "speaker": "안내",
+           "text": "주인공, 뒤부아 아저씨, 폴, 클레르는 꾸민 인물이에요. 실제 인물도 나오지만 그 사람들이 하는 말은 꾸민 대사예요. 사건과 연도는 사실이에요."
+          },
+          {
+           "picture": "cu_memory_info",
+           "speaker": "안내",
+           "text": "화면이 옛날 사진처럼 바뀌면 '회상 장면'이에요. 주인공이 직접 보지 못한 중요한 장면을, 들은 이야기로 떠올리는 거예요."
+          },
+          {
+           "picture": "cu_save_info",
+           "speaker": "안내",
+           "text": "장이 끝날 때마다 이 기기에 자동 저장되고, '이어하기 번호'도 알려 줘요. 번호를 적어 두면 다른 컴퓨터에서도 이어 할 수 있어요."
+          }
+         ]
+        }
+       ],
+       "cancel": [
+        {
+         "text": "처음부터 시작할게요.",
+         "speaker": "안내"
+        },
+        {
+         "progressClear": true
+        },
+        {
+         "picture": "cu_rules_fiction",
+         "speaker": "안내",
+         "text": "시작하기 전에! 이 게임에는 실제 역사와, 재미를 위해 꾸민 이야기가 함께 나와요."
+        },
+        {
+         "picture": "cu_fiction_people",
+         "speaker": "안내",
+         "text": "주인공, 뒤부아 아저씨, 폴, 클레르는 꾸민 인물이에요. 실제 인물도 나오지만 그 사람들이 하는 말은 꾸민 대사예요. 사건과 연도는 사실이에요."
+        },
+        {
+         "picture": "cu_memory_info",
+         "speaker": "안내",
+         "text": "화면이 옛날 사진처럼 바뀌면 '회상 장면'이에요. 주인공이 직접 보지 못한 중요한 장면을, 들은 이야기로 떠올리는 거예요."
+        },
+        {
+         "picture": "cu_save_info",
+         "speaker": "안내",
+         "text": "장이 끝날 때마다 이 기기에 자동 저장되고, '이어하기 번호'도 알려 줘요. 번호를 적어 두면 다른 컴퓨터에서도 이어 할 수 있어요."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "progress": {
+  "key": "paris_apprentice",
+  "mult": 271,
+  "add": 1384,
+  "base": {
+   "flags": []
+  },
+  "keepItems": [
+   "treasure_enlight",
+   "treasure_marseillaise",
+   "flyer1",
+   "flyer2",
+   "flyer3",
+   "flyer4",
+   "flyer5",
+   "flyer6",
+   "ribbon"
+  ],
+  "units": [
+   {
+    "flag": "ch0",
+    "flags": [
+     "p_done",
+     "bread",
+     "p_shop",
+     "satire_seen",
+     "q_estates",
+     "pamphlet_read",
+     "p_tennis",
+     "q_tennis",
+     "paul_ahead"
+    ],
+    "items": [
+     "apron",
+     "pamphlet"
+    ]
+   },
+   {
+    "flag": "ch1",
+    "flags": [
+     "c1",
+     "bast_done",
+     "bast_in",
+     "q_cells",
+     "q_why",
+     "cellar_done",
+     "powder",
+     "enl",
+     "q_print",
+     "q_rights",
+     "front1",
+     "clair_visit"
+    ],
+    "items": [
+     "register",
+     "front1"
+    ]
+   },
+   {
+    "flag": "ch2",
+    "flags": [
+     "c2",
+     "ch2_go",
+     "caught",
+     "q_king",
+     "ch2_print",
+     "q_1792",
+     "front2",
+     "paul_gone"
+    ],
+    "items": [
+     "assignat",
+     "front2"
+    ]
+   },
+   {
+    "flag": "ch3",
+    "flags": [
+     "c3",
+     "ch3_mem",
+     "q_parties",
+     "q_evidence",
+     "clair_decided",
+     "clair_gone",
+     "ch3_print",
+     "front3",
+     "law_read"
+    ],
+    "items": [
+     "front3"
+    ]
+   },
+   {
+    "flag": "ch4",
+    "flags": [
+     "c4",
+     "ch4_open",
+     "paul_letter",
+     "q_code",
+     "ch4_mem",
+     "q_coro",
+     "ch4_print",
+     "front4"
+    ],
+    "items": [
+     "letter_paul",
+     "front4"
+    ]
+   },
+   {
+    "flag": "ch5",
+    "flags": [
+     "c5",
+     "crossed",
+     "paul_lost",
+     "ch5_print",
+     "front5"
+    ],
+    "items": [
+     "paul_hat",
+     "front5"
+    ]
+   },
+   {
+    "flag": "ch6",
+    "flags": [
+     "c6",
+     "q_100",
+     "q_wl",
+     "wl_mission",
+     "q_vienna",
+     "ch6_print",
+     "front6"
+    ],
+    "items": [
+     "front6"
+    ]
+   }
+  ]
+ },
+ "items": {
+  "apron": {
+   "name": "가죽 앞치마",
+   "image": "item_apron",
+   "effect": "charm",
+   "desc": "인쇄소 견습생의 앞치마. 잉크 냄새가 배어 있어 '그냥 심부름하는 아이'로 보인다. (감시에 한 번 들켜도 괜찮음, 쓰면 사라짐)"
+  },
+  "pamphlet": {
+   "name": "시에예스의 소책자",
+   "image": "item_pamphlet",
+   "closeup": "cu_sieyes",
+   "desc": "「제3신분이란 무엇인가?」(1789년 1월). 제3신분은 전부인데 지금까지 아무것도 아니었다고 주장한다."
+  },
+  "register": {
+   "name": "바스티유 수감자 명부",
+   "image": "item_register",
+   "closeup": "cu_register",
+   "desc": "1789년 7월 14일, 바스티유에 갇혀 있던 사람들의 명단."
+  },
+  "treasure_enlight": {
+   "name": "★ 사료 카드: 바스티유의 금서",
+   "image": "item_treasure",
+   "closeup": "cu_treasure_enlight",
+   "desc": "바스티유 창고에 압수된 금서들. 로크·몽테스키외·루소의 계몽사상이 혁명의 바탕이 되었다."
+  },
+  "assignat": {
+   "name": "아시냐 지폐",
+   "image": "item_assignat",
+   "closeup": "cu_assignat",
+   "desc": "혁명 정부가 찍은 지폐. 루이 16세의 옆얼굴이 인쇄되어 있다."
+  },
+  "pass": {
+   "name": "빈 통행증",
+   "image": "item_pass",
+   "closeup": "cu_pass",
+   "desc": "뒤부아 아저씨가 몰래 찍어 준 통행증. 파리 관문을 나갈 때 필요하다."
+  },
+  "letter_paul": {
+   "name": "폴의 편지 (이집트에서)",
+   "image": "item_letter",
+   "closeup": "cu_letter_paul",
+   "desc": "1798년, 이집트 원정에 간 폴이 보낸 편지."
+  },
+  "gloves": {
+   "name": "털장갑",
+   "image": "item_gloves",
+   "effect": "warm",
+   "desc": "버려진 마차에서 찾은 두꺼운 털장갑. 추위를 조금 덜 탄다. (하트가 천천히 줄어듦)"
+  },
+  "paul_hat": {
+   "name": "폴의 모자",
+   "image": "item_hat",
+   "desc": "베레지나강 건너편 눈 속에서 찾은 폴의 이각모."
+  },
+  "treasure_marseillaise": {
+   "name": "★ 사료 카드: 라 마르세예즈",
+   "image": "item_treasure",
+   "closeup": "cu_treasure_marseillaise",
+   "desc": "1792년 전쟁 때 마르세유 의용군이 부르며 파리에 들어온 노래. 지금 프랑스 국가."
+  },
+  "flyer1": {
+   "name": "전단지 ① 삼부회 진정서",
+   "image": "item_flyer",
+   "closeup": "cu_flyer1",
+   "desc": "숨어 있던 전단지. 6장을 모두 모으면 마지막에 호외를 찍을 수 있다."
+  },
+  "flyer2": {
+   "name": "전단지 ② 바스티유의 열쇠",
+   "image": "item_flyer",
+   "closeup": "cu_flyer2",
+   "desc": "숨어 있던 전단지. 6장을 모두 모으면 마지막에 호외를 찍을 수 있다."
+  },
+  "flyer3": {
+   "name": "전단지 ③ 왕이 도망쳤다!",
+   "image": "item_flyer",
+   "closeup": "cu_flyer3",
+   "desc": "숨어 있던 전단지. 6장을 모두 모으면 마지막에 호외를 찍을 수 있다."
+  },
+  "flyer4": {
+   "name": "전단지 ④ 늙은 코르들리에",
+   "image": "item_flyer",
+   "closeup": "cu_flyer4",
+   "desc": "숨어 있던 전단지. 6장을 모두 모으면 마지막에 호외를 찍을 수 있다."
+  },
+  "flyer5": {
+   "name": "전단지 ⑤ 대륙 봉쇄령",
+   "image": "item_flyer",
+   "closeup": "cu_flyer5",
+   "desc": "숨어 있던 전단지. 6장을 모두 모으면 마지막에 호외를 찍을 수 있다."
+  },
+  "flyer6": {
+   "name": "전단지 ⑥ 대육군 제29호 공보",
+   "image": "item_flyer",
+   "closeup": "cu_flyer6",
+   "desc": "숨어 있던 전단지. 6장을 모두 모으면 마지막에 호외를 찍을 수 있다."
+  },
+  "front1": {
+   "name": "신문 ①면: 바스티유 함락 · 인권 선언",
+   "image": "item_front1",
+   "closeup": "cu_front1",
+   "desc": "우리 인쇄소가 찍은 신문 1면."
+  },
+  "front2": {
+   "name": "신문 ②면: 왕의 도주 · 공화국",
+   "image": "item_front2",
+   "closeup": "cu_front2",
+   "desc": "우리 인쇄소가 찍은 신문 1면."
+  },
+  "front3": {
+   "name": "신문 ③면: 공포 정치의 끝",
+   "image": "item_front3",
+   "closeup": "cu_front3",
+   "desc": "우리 인쇄소가 찍은 신문 1면."
+  },
+  "front4": {
+   "name": "신문 ④면: 황제 나폴레옹",
+   "image": "item_front4",
+   "closeup": "cu_front4",
+   "desc": "우리 인쇄소가 찍은 신문 1면."
+  },
+  "front5": {
+   "name": "신문 ⑤면: 러시아의 눈",
+   "image": "item_front5",
+   "closeup": "cu_front5",
+   "desc": "우리 인쇄소가 찍은 신문 1면."
+  },
+  "front6": {
+   "name": "신문 ⑥면: 워털루 · 빈 회의",
+   "image": "item_front6",
+   "closeup": "cu_front6",
+   "desc": "우리 인쇄소가 찍은 신문 1면."
+  },
+  "ribbon": {
+   "name": "클레르의 리본",
+   "image": "item_ribbon",
+   "desc": "관문에서 헤어질 때 클레르가 건넨 푸른 리본."
+  }
+ },
+ "hintQuizzes": [
+  {
+   "question": "혁명 전 프랑스에서 인구의 약 98%를 차지했던 신분은?",
+   "choice": [
+    "제3신분 (평민)",
+    "제1신분 (성직자)",
+    "제2신분 (귀족)",
+    "왕족"
+   ],
+   "answer": 1,
+   "explain": "농민·상공업자·도시 노동자가 모두 제3신분이었어요. 세금도 거의 이들이 냈어요."
+  },
+  {
+   "question": "1789년 6월, 제3신분 대표들이 '헌법을 만들 때까지 흩어지지 않겠다'고 맹세한 일은?",
+   "choice": [
+    "테니스코트의 서약",
+    "권리 장전",
+    "빈 회의",
+    "브뤼메르 쿠데타"
+   ],
+   "answer": 1,
+   "explain": "국민 의회를 세운 대표들이 회의장이 막히자 실내 테니스장에 모여 맹세했어요."
+  },
+  {
+   "question": "1789년 8월에 발표되어 '사람은 자유롭고 평등하게 태어났다'고 밝힌 문서는?",
+   "choice": [
+    "인권 선언",
+    "나폴레옹 법전",
+    "대헌장",
+    "독립 선언"
+   ],
+   "answer": 1,
+   "explain": "인권 선언(인간과 시민의 권리 선언)은 자유·평등·국민 주권을 밝혔어요."
+  },
+  {
+   "question": "나폴레옹이 만든 법전에 담긴 내용이 아닌 것은?",
+   "choice": [
+    "모든 귀족 신분을 되살림",
+    "법 앞의 평등",
+    "개인 재산 보호",
+    "종교의 자유"
+   ],
+   "answer": 1,
+   "explain": "나폴레옹 법전은 혁명의 성과(법 앞의 평등, 재산권, 종교 자유)를 담았어요. 다만 여성의 권리는 제한했어요."
+  },
+  {
+   "question": "나폴레옹 몰락 뒤, 유럽을 혁명 이전으로 되돌리려 한 회의는?",
+   "choice": [
+    "빈 회의",
+    "삼부회",
+    "국민 공회",
+    "파리 강화 회의"
+   ],
+   "answer": 1,
+   "explain": "1814~1815년 빈 회의. 메테르니히가 이끌었고 '정통주의'를 내세웠어요."
+  }
+ ],
+ "puzzles": [
+  {
+   "id": "bread",
+   "rooms": [
+    "street"
+   ],
+   "name": "빵 심부름",
+   "hints": [
+    "거리 왼쪽 위 '빵집' 앞의 빵집 주인에게 말을 거세요.",
+    "빵을 산 뒤에는 귀족 마차를 피해 '뒤부아 인쇄소'(위쪽 붉은 가게) 문으로!"
+   ]
+  },
+  {
+   "id": "q_estates",
+   "rooms": [
+    "shop"
+   ],
+   "name": "세 신분 피라미드",
+   "hints": [
+    "벽의 풍자화를 보세요. 농민 등에 누가 업혀 있나요?",
+    "맨 위 성직자(제1신분) → 귀족(제2신분) → 평민(제3신분, 약 98%)"
+   ]
+  },
+  {
+   "id": "pamphlet_read",
+   "rooms": [
+    "shop"
+   ],
+   "name": "시에예스의 소책자",
+   "hints": [
+    "인쇄소 위쪽 '활자 상자'를 조사하세요.",
+    "소책자를 찾은 뒤 뒤부아 아저씨에게 말을 거세요."
+   ]
+  },
+  {
+   "id": "q_tennis",
+   "rooms": [
+    "tennis"
+   ],
+   "name": "테니스코트의 서약",
+   "hints": [
+    "'단서' 표시가 있는 대표 셋에게 말을 걸고 바이이에게 가세요.",
+    "맹세: 헌법을 만들 때까지 결코 흩어지지 않는다"
+   ]
+  },
+  {
+   "id": "bast_in",
+   "rooms": [
+    "bastille"
+   ],
+   "name": "도개교로",
+   "hints": [
+    "연기는 좌우로 움직여요. 연기가 지나간 뒤에 위로!",
+    "도개교(가운데 나무 다리)를 건너 성문을 조사하세요."
+   ]
+  },
+  {
+   "id": "q_cells",
+   "rooms": [
+    "bastille"
+   ],
+   "name": "수감자 수",
+   "hints": [
+    "안뜰 위쪽 감방 세 곳을 모두 조사하세요.",
+    "4 + 2 + 1 = 7"
+   ]
+  },
+  {
+   "id": "cellar_done",
+   "rooms": [
+    "cellar"
+   ],
+   "name": "화약 창고",
+   "hints": [
+    "어두우니 천천히! '화약' '?' 표시를 찾아 조사하세요.",
+    "화약 통과 작은 상자를 조사한 뒤 오른쪽 아래 사다리로."
+   ]
+  },
+  {
+   "id": "q_rights",
+   "rooms": [
+    "shop"
+   ],
+   "name": "인권 선언 빈칸",
+   "hints": [
+    "제1조: 사람은 ○○롭고, 권리에서 ○○하게 태어난다.",
+    "자유 · 평등 · 주권"
+   ]
+  },
+  {
+   "id": "caught",
+   "rooms": [
+    "varennes"
+   ],
+   "name": "마차 추격",
+   "hints": [
+    "마차는 도망 다녀요. 길 끝(오른쪽)으로 몰아가면 잡기 쉬워요.",
+    "놓치면 길 위의 마차에 다시 말을 걸어요."
+   ]
+  },
+  {
+   "id": "q_king",
+   "rooms": [
+    "varennes"
+   ],
+   "name": "누가 왕일까?",
+   "hints": [
+    "드루에의 말: 키가 크고, 일해 본 적 없는 고운 손.",
+    "하인 옷을 입은 키 큰 남자"
+   ]
+  },
+  {
+   "id": "q_1792",
+   "rooms": [
+    "shop"
+   ],
+   "name": "1791~1792 차례",
+   "hints": [
+    "헌법(1791. 9.) → 전쟁(1792. 4.) → ?",
+    "헌법 → 전쟁 → 8월 10일 왕궁 습격 → 공화국 선포(9월)"
+   ]
+  },
+  {
+   "id": "q_parties",
+   "rooms": [
+    "execution"
+   ],
+   "name": "지롱드파와 자코뱅파",
+   "hints": [
+    "두 의원 이야기를 듣고 아래 출구를 조사하세요.",
+    "처형을 주장한 쪽: 자코뱅파(로베스피에르)"
+   ]
+  },
+  {
+   "id": "q_evidence",
+   "rooms": [
+    "night"
+   ],
+   "name": "증거와 소문",
+   "hints": [
+    "'~더라', '~같다'는 소문이에요.",
+    "장부를 첨부한 세 번째 고발장"
+   ]
+  },
+  {
+   "id": "clair_decided",
+   "rooms": [
+    "night"
+   ],
+   "name": "클레르",
+   "hints": [
+    "클레르는 거리 왼쪽 아래 골목에 있어요.",
+    "돕기로 했다면 순찰대 빨간 칸을 피해 동쪽(오른쪽) 관문 마차로!"
+   ]
+  },
+  {
+   "id": "q_code",
+   "rooms": [
+    "shop"
+   ],
+   "name": "나폴레옹 법전",
+   "hints": [
+    "모두에게 똑같이 = 성과, 누군가를 묶어 둠 = 한계",
+    "평등·재산·종교 자유는 성과, 아내의 복종은 한계"
+   ]
+  },
+  {
+   "id": "q_coro",
+   "rooms": [
+    "coronation"
+   ],
+   "name": "대관식",
+   "hints": [
+    "교황, 나폴레옹, 조제핀에게 말을 걸고 화가 다비드(오른쪽 아래)에게.",
+    "나폴레옹은 스스로 관을 썼어요: 힘이 교회가 아닌 자신에게서"
+   ]
+  },
+  {
+   "id": "crossed",
+   "rooms": [
+    "russia"
+   ],
+   "name": "베레지나강",
+   "hints": [
+    "모닥불에서 하트를 채운 뒤 다리 앞에 가세요.",
+    "다리를 건너 건너편 깃발(오른쪽)을 조사하면 성공!"
+   ]
+  },
+  {
+   "id": "q_100",
+   "rooms": [
+    "paris1815"
+   ],
+   "name": "백일천하 머리기사",
+   "hints": [
+    "괄호 속 날짜를 보세요.",
+    "식인귀 → 괴물 → 찬탈자 → 황제 폐하"
+   ]
+  },
+  {
+   "id": "q_wl",
+   "rooms": [
+    "waterloo"
+   ],
+   "name": "워털루",
+   "hints": [
+    "장교에게 명령서를 받고 농가 병사와 동쪽 위 정찰병에게 전하세요.",
+    "동쪽에서 온 군대: 프로이센군(블뤼허)"
+   ]
+  },
+  {
+   "id": "q_vienna",
+   "rooms": [
+    "paris1815"
+   ],
+   "name": "빈 회의",
+   "hints": [
+    "혁명 '이전'으로 되돌리려 했어요.",
+    "정통주의"
+   ]
+  }
+ ],
+ "rooms": [
+  {
+   "id": "street",
+   "bgm": "France_Street",
+   "name": "프롤로그 · 1789년 봄, 파리 생탕투안 거리",
+   "map": 1,
+   "camera": "follow",
+   "start": [
+    1,
+    7,
+    "right"
+   ],
+   "checkpoint": [
+    1,
+    7,
+    "right"
+   ],
+   "movers": [
+    {
+     "event": "pusher1",
+     "route": [
+      [
+       12,
+       7
+      ],
+      [
+       12,
+       11
+      ],
+      [
+       12,
+       7
+      ]
+     ],
+     "speed": 3,
+     "loop": "pingpong",
+     "damage": 0,
+     "if": {
+      "noFlag": "bread"
+     }
+    },
+    {
+     "event": "pusher2",
+     "route": [
+      [
+       16,
+       5
+      ],
+      [
+       16,
+       10
+      ],
+      [
+       16,
+       5
+      ]
+     ],
+     "speed": 3,
+     "loop": "pingpong",
+     "damage": 0,
+     "if": {
+      "noFlag": "bread"
+     }
+    },
+    {
+     "event": "noble_coach",
+     "route": [
+      [
+       33,
+       8
+      ],
+      [
+       3,
+       8
+      ]
+     ],
+     "speed": 5,
+     "loop": "restart",
+     "damage": 1,
+     "if": {
+      "flag": "bread",
+      "noFlag": "p_shop"
+     }
+    }
+   ],
+   "ko": [
+    {
+     "text": "아야... 귀족 마차는 사람을 봐주지 않는구나. 다시 가 보자.",
+     "speaker": "{name}"
+    }
+   ],
+   "enter": [
+    {
+     "if": {
+      "flag": "p_done"
+     },
+     "then": [
+      {
+       "go": "shop",
+       "x": 14,
+       "y": 10,
+       "dir": "up",
+       "fade": "white"
+      },
+      {
+       "if": {
+        "flag": "c6"
+       },
+       "then": [
+        {
+         "goal": "뒤부아 아저씨와 이야기하자 (에필로그)"
+        }
+       ],
+       "else": [
+        {
+         "if": {
+          "flag": "c5"
+         },
+         "then": [
+          {
+           "goal": "6장: 인쇄소 문을 나서 1815년의 파리 거리로"
+          }
+         ],
+         "else": [
+          {
+           "if": {
+            "flag": "c4"
+           },
+           "then": [
+            {
+             "goal": "5장: 인쇄소 문을 나서 러시아 원정길로"
+            }
+           ],
+           "else": [
+            {
+             "if": {
+              "flag": "c3"
+             },
+             "then": [
+              {
+               "goal": "4장: 뒤부아 아저씨에게 말을 걸자 (1799년)"
+              }
+             ],
+             "else": [
+              {
+               "if": {
+                "flag": "c2"
+               },
+               "then": [
+                {
+                 "goal": "3장: 뒤부아 아저씨에게 말을 걸자 (1793년)"
+                }
+               ],
+               "else": [
+                {
+                 "if": {
+                  "flag": "c1"
+                 },
+                 "then": [
+                  {
+                   "goal": "2장: 뒤부아 아저씨에게 말을 걸자 (1791년)"
+                  }
+                 ],
+                 "else": [
+                  {
+                   "goal": "1장: 인쇄소 문을 나서 바스티유로!"
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "else": [
+      {
+       "text": "1789년 봄, 파리 동쪽 생탕투안 거리. 새벽부터 빵집 앞에 줄이 길다."
+      },
+      {
+       "text": "작년 흉년 때문에 빵값이 하루 품삯의 절반이 넘었어. 오늘도 빵을 못 사면 아저씨한테 혼날 텐데...",
+       "speaker": "{name}"
+      },
+      {
+       "text": "나는 {name}, 열네 살. 뒤부아 인쇄소의 견습생이다. 심부름 먼저 하고 인쇄소로 가자!",
+       "speaker": "{name}"
+      },
+      {
+       "goal": "빵집에서 빵 사기 (사람들에게 부딪히지 않게!)"
+      }
+     ]
+    }
+   ],
+   "hotspots": [
+    {
+     "id": "baker",
+     "label": "빵집 주인",
+     "mark": "빵",
+     "markIf": {
+      "noFlag": "bread"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "bread"
+       },
+       "steps": [
+        {
+         "text": "밀가루가 없어. 내일은 문을 못 열지도 몰라.",
+         "speaker": "빵집 주인"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "어서 와, 꼬마 견습생. 오늘 빵은 마지막 하나야. 4수(sou) 하던 게 14수가 됐단다.",
+         "speaker": "빵집 주인"
+        },
+        {
+         "choice": [
+          "빵값이 왜 이렇게 올랐어요?",
+          "그냥 살게요"
+         ],
+         "question": "",
+         "on1": [
+          {
+           "text": "작년 우박과 흉년으로 밀이 모자라. 그런데 세금은 그대로고, 귀족과 성직자는 세금을 거의 안 내지.",
+           "speaker": "빵집 주인"
+          }
+         ],
+         "on2": []
+        },
+        {
+         "flag": "bread",
+         "give": "apron",
+         "effect": "sparkle",
+         "target": "baker",
+         "text": "빵을 샀다! 빵집 주인이 아저씨 앞치마도 전해 달라며 건네준다. (가죽 앞치마를 얻었다)"
+        },
+        {
+         "text": "앞치마는 내가 입고 가자. 이제 인쇄소로! 어? 저기 귀족 마차가 달려온다. 조심해야지.",
+         "speaker": "{name}"
+        },
+        {
+         "goal": "귀족 마차를 피해 '뒤부아 인쇄소'로 가자"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "queue1",
+     "label": "줄 선 아주머니",
+     "steps": [
+      {
+       "text": "새벽 4시부터 줄을 섰어. 우리 애들 먹일 빵 한 덩이 사기가 이렇게 힘들어서야...",
+       "speaker": "아주머니"
+      }
+     ]
+    },
+    {
+     "id": "queue2",
+     "label": "줄 선 아저씨",
+     "steps": [
+      {
+       "text": "나는 하루 종일 일해서 20수를 버는데 빵 하나가 14수야. 이게 말이 되나?",
+       "speaker": "아저씨"
+      }
+     ]
+    },
+    {
+     "id": "queue3",
+     "label": "줄 선 할머니",
+     "steps": [
+      {
+       "text": "왕께서 '삼부회'를 여신다는구먼. 175년 만이래. 우리 목소리도 들어 주실까?",
+       "speaker": "할머니"
+      }
+     ]
+    },
+    {
+     "id": "pusher1",
+     "label": "바쁜 짐꾼",
+     "steps": [
+      {
+       "text": "비켜, 비켜! 짐 나간다!",
+       "speaker": "짐꾼"
+      }
+     ]
+    },
+    {
+     "id": "pusher2",
+     "label": "바쁜 행인",
+     "steps": [
+      {
+       "text": "빵이 다 떨어졌다고? 큰일이네!",
+       "speaker": "행인"
+      }
+     ]
+    },
+    {
+     "id": "noble_coach",
+     "label": "귀족의 마차",
+     "steps": [
+      {
+       "text": "금박을 입힌 화려한 마차. 창 너머로 분칠한 가발이 보인다."
+      }
+     ]
+    },
+    {
+     "id": "wine",
+     "label": "포도주 가게",
+     "steps": [
+      {
+       "text": "가게 안에서 사람들이 소책자를 돌려 읽으며 떠든다. '제3신분이란 무엇인가?' ..."
+      }
+     ]
+    },
+    {
+     "id": "poster",
+     "label": "벽보",
+     "steps": [
+      {
+       "text": "'왕의 명령: 5월 5일 베르사유에서 삼부회를 연다. 각 신분은 대표를 뽑고 진정서(바라는 일)를 적어 내라.'"
+      }
+     ]
+    },
+    {
+     "id": "smith",
+     "label": "대장장이",
+     "steps": [
+      {
+       "text": "귀족 나리들은 사냥한다고 우리 밭을 짓밟아도 되고, 우리는 토끼 한 마리도 못 잡아. 불공평하지 않냐?",
+       "speaker": "대장장이"
+      }
+     ]
+    },
+    {
+     "id": "priest",
+     "label": "시골 신부님",
+     "steps": [
+      {
+       "text": "나도 성직자지만 가난한 시골 신부란다. 높은 주교들은 귀족 출신이라 부자지. 같은 제1신분이라도 사정이 달라.",
+       "speaker": "시골 신부"
+      }
+     ]
+    },
+    {
+     "id": "bastille_view",
+     "label": "바스티유 요새",
+     "steps": [
+      {
+       "text": "멀리 바스티유 요새의 탑이 보인다. 왕의 명령으로 사람을 가두는 감옥이자 무기고다."
+      },
+      {
+       "text": "저 탑만 보면 왠지 으스스해.",
+       "speaker": "{name}"
+      }
+     ]
+    },
+    {
+     "id": "well",
+     "label": "우물",
+     "steps": [
+      {
+       "text": "거리 사람들이 함께 쓰는 우물."
+      }
+     ]
+    },
+    {
+     "id": "cart",
+     "label": "건초 수레",
+     "steps": [
+      {
+       "text": "시골에서 올라온 건초 수레. 농민들은 영주에게 바치는 공납과 교회에 내는 십일조에 허덕인다고 한다."
+      }
+     ]
+    },
+    {
+     "id": "fountain",
+     "label": "분수",
+     "steps": [
+      {
+       "text": "물 긷는 사람들이 소문을 주고받는다. '베르사유에서 제3신분 대표들이 회의장에서 쫓겨났대!'"
+      }
+     ]
+    },
+    {
+     "id": "breadcart",
+     "label": "빈 빵 수레",
+     "steps": [
+      {
+       "text": "텅 빈 빵 수레. 바닥에 밀가루 자국만 남아 있다."
+      }
+     ]
+    },
+    {
+     "id": "shop_door",
+     "label": "뒤부아 인쇄소",
+     "mark": "인쇄소",
+     "markIf": {
+      "flag": "bread",
+      "noFlag": "p_shop"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "bread"
+       },
+       "steps": [
+        {
+         "flag": "p_shop"
+        },
+        {
+         "go": "shop",
+         "x": 14,
+         "y": 10,
+         "dir": "up",
+         "fade": "black"
+        },
+        {
+         "text": "왔구나, {name}! 빵 고맙다. 오, 앞치마도. 이제 너도 진짜 인쇄공 같구나.",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "text": "야, {name}! 나 왔어. 오늘 아저씨가 무슨 큰일을 맡았대!",
+         "speaker": "폴"
+        },
+        {
+         "text": "폴도 왔구나. 요즘 파리는 소책자와 신문 찍느라 정신이 없단다. 일단 가게를 둘러보렴. 벽에 걸린 그림부터 보자.",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "goal": "인쇄소를 둘러보자 (벽의 그림, 소책자)"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "빵 심부름부터 해야 해!",
+         "speaker": "{name}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "shop",
+   "bgm": "France_Shop",
+   "name": "뒤부아 인쇄소 (파리)",
+   "map": 2,
+   "start": [
+    14,
+    11,
+    "up"
+   ],
+   "hotspots": [
+    {
+     "id": "dubois",
+     "label": "뒤부아 아저씨 (인쇄소 주인)",
+     "mark": "!",
+     "markIf": {
+      "flag": "dub_mark"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "c6"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "ended"
+         },
+         "then": [
+          {
+           "text": "고맙다, {name}. 네 신문은 오래 남을 거다.",
+           "speaker": "뒤부아 아저씨"
+          }
+         ],
+         "else": [
+          {
+           "bgm": "France_Ending"
+          },
+          {
+           "text": "── 1815년 가을. 인쇄소 벽에는 우리가 찍은 신문 여섯 장이 나란히 붙어 있다."
+          },
+          {
+           "picture": "cu_frontwall",
+           "overlays": [
+            {
+             "picture": "cu_fw1",
+             "if": {
+              "item": "front1"
+             }
+            },
+            {
+             "picture": "cu_fw2",
+             "if": {
+              "item": "front2"
+             }
+            },
+            {
+             "picture": "cu_fw3",
+             "if": {
+              "item": "front3"
+             }
+            },
+            {
+             "picture": "cu_fw4",
+             "if": {
+              "item": "front4"
+             }
+            },
+            {
+             "picture": "cu_fw5",
+             "if": {
+              "item": "front5"
+             }
+            },
+            {
+             "picture": "cu_fw6",
+             "if": {
+              "item": "front6"
+             }
+            }
+           ],
+           "text": "바스티유 → 왕의 도주 → 공포 정치 → 황제 → 러시아 → 워털루. 26년의 이야기가 한 벽에 모였다."
+          },
+          {
+           "text": "{name}, 왕은 돌아왔지만 세상은 1789년 이전과 같지 않을 거다.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "if": {
+            "item": "ribbon"
+           },
+           "then": [
+            {
+             "picture": "cu_clair_letter_a",
+             "text": "클레르의 편지가 왔다. \"시골 학교에서 아이들에게 글을 가르쳐요. 모든 아이가 신문을 읽을 수 있는 날이 오길!\""
+            }
+           ],
+           "else": [
+            {
+             "picture": "cu_clair_letter_b",
+             "text": "낯선 편지가 왔다. \"클레르 아가씨는 그해 감옥에 갇혔다가 테르미도르 뒤에 풀려났어요. 지금은 외국에 산답니다.\""
+            },
+            {
+             "text": "(살아 있었구나... 그때 돕지 못한 게 늘 마음에 걸렸는데.)",
+             "speaker": "{name}"
+            }
+           ]
+          },
+          {
+           "text": "벽에 걸린 폴의 이각모를 바라보았다. 폴, 네 이름은 마지막 신문에 꼭 실었어."
+          },
+          {
+           "picture": "cu_epi1",
+           "text": "빈 체제(1815~): 메테르니히가 이끈 각국 왕들은 유럽을 혁명 이전으로 되돌리고, 자유주의·민족주의를 억눌렀어요."
+          },
+          {
+           "picture": "cu_epi2",
+           "text": "하지만 '자유'와 '평등', '국민이 나라의 주인'이라는 생각은 사라지지 않았어요. 프랑스에서는 1830년 7월 혁명, 1848년 2월 혁명이 일어났고, 그 불길은 유럽 곳곳으로 번졌어요."
+          },
+          {
+           "picture": "cu_epi3",
+           "text": "같은 말과 역사를 가진 사람들이 하나의 나라를 이루자는 민족주의도 커졌어요. 1861년 이탈리아, 1871년 독일이 통일되어 '국민 국가'가 세워졌답니다."
+          },
+          {
+           "text": "자, 다음 신문은 무엇을 찍을까? 혁명은 끝나지 않았단다. 신문을 읽는 사람들 마음속에서 계속되지.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "if": {
+            "items": [
+             "flyer1",
+             "flyer2",
+             "flyer3",
+             "flyer4",
+             "flyer5",
+             "flyer6"
+            ]
+           },
+           "then": [
+            {
+             "picture": "cu_extra",
+             "effect": "firework",
+             "text": "★ 숨은 전단지 6장을 모두 모았다! 특별 호외 '견습생이 본 혁명 26년'을 찍었다!"
+            }
+           ]
+          },
+          {
+           "flag": "ended"
+          },
+          {
+           "escape": true
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "c5"
+       },
+       "steps": [
+        {
+         "text": "1815년이라... 황제가 엘바섬으로 쫓겨났다가 돌아올 거란 소문이 돈다. 거리 가판대에 가 보렴.",
+         "speaker": "뒤부아 아저씨"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "c4"
+       },
+       "steps": [
+        {
+         "text": "러시아 원정에 따라간 인쇄병들은 잘 있을까... 문을 나서면 원정길이다. 털장갑 같은 걸 꼭 챙기렴.",
+         "speaker": "뒤부아 아저씨"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "c3"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "q_code"
+         },
+         "then": [
+          {
+           "text": "벽의 그림을 보렴. 다비드가 그린 대관식 그림 밑그림이란다.",
+           "speaker": "뒤부아 아저씨"
+          }
+         ],
+         "else": [
+          {
+           "if": {
+            "flag": "ch4_open"
+           },
+           "then": [
+            {
+             "text": "법전 인쇄판은 인쇄기에서 짜면 돼.",
+             "speaker": "뒤부아 아저씨"
+            }
+           ],
+           "else": [
+            {
+             "flag": [
+              "ch4_open"
+             ],
+             "text": "── 1799년 가을. 인쇄소 간판은 그대로지만, 나는 어느새 스물네 살 인쇄공이 되었다."
+            },
+            {
+             "text": "{name}, 폴에게서 편지가 왔다! 이집트에서 보냈대. 우편함에 있어.",
+             "speaker": "뒤부아 아저씨"
+            },
+            {
+             "goal": "우편함에서 폴의 편지를 읽자"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "c2"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "ch3_mem"
+         },
+         "then": [
+          {
+           "text": "밤에는 조심하렴. 문을 나서면 순찰대가 돈다.",
+           "speaker": "뒤부아 아저씨"
+          }
+         ],
+         "else": [
+          {
+           "text": "{name}, 국민 공회에서 왕의 재판이 끝났다. 1793년 1월 21일, 혁명 광장에서... 루이 16세가 처형되었단다.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "text": "나는 그날 광장에 있었어. 내가 본 것을 들려주마. 눈을 감고 그려 보렴.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "flag": "ch3_mem"
+          },
+          {
+           "effect": "flash",
+           "text": "(아저씨의 이야기가 그림처럼 떠오른다... 회상: 1793년 1월 21일)",
+           "se": "Move1"
+          },
+          {
+           "go": "execution",
+           "fade": "white"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "c1"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "ch2_go"
+         },
+         "then": [
+          {
+           "text": "드루에 씨가 바렌에서 기다린다. 어서 문으로!",
+           "speaker": "뒤부아 아저씨"
+          }
+         ],
+         "else": [
+          {
+           "text": "{name}! 큰일이다! 왕과 왕비가 밤사이 튈르리 궁전에서 사라졌대!",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "text": "국경 쪽으로 마차를 타고 달아났다는구나. 역참장 드루에 씨가 뒤쫓는다고 연락이 왔어. 너도 가서 취재하렴!",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "flag": "ch2_go"
+          },
+          {
+           "goal": "인쇄소 문을 나서 바렌으로 가는 길로!"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "p_done"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "bast_done"
+         },
+         "then": [
+          {
+           "text": "바스티유 소식은 인쇄기에서 찍자. 우선 선언문 원고를 읽어 보렴.",
+           "speaker": "뒤부아 아저씨"
+          }
+         ],
+         "else": [
+          {
+           "text": "바스티유로 가렴! 폴이 먼저 가 있다. 다치지 말고!",
+           "speaker": "뒤부아 아저씨"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "pamphlet_read"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "p_tennis"
+         },
+         "then": [
+          {
+           "text": "다녀왔구나. 이제 문을 나서 보렴...",
+           "speaker": "뒤부아 아저씨"
+          }
+         ],
+         "else": [
+          {
+           "text": "그 소책자 읽었니? 지금 베르사유에서는 그 말이 정말로 벌어지고 있단다.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "text": "어제 베르사유에 다녀온 손님에게 들었어. 6월 20일, 제3신분 대표들이 회의장 문이 잠기자 근처 테니스 코트로 몰려갔대.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "text": "거기서 무슨 일이 있었는지... 손님 이야기를 들려줄 테니 그 장면을 그려 보렴. 나중에 기사로 쓰자꾸나.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "flag": "p_tennis"
+          },
+          {
+           "effect": "flash",
+           "text": "(아저씨의 이야기가 그림처럼 떠오른다... 회상: 1789년 6월 20일, 베르사유)",
+           "se": "Move1"
+          },
+          {
+           "go": "tennis",
+           "fade": "white"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "q_estates"
+       },
+       "steps": [
+        {
+         "text": "소책자는 다락 어딘가에 뒀을 거야. 활자 상자도 보렴.",
+         "speaker": "뒤부아 아저씨"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "satire_seen"
+       },
+       "steps": [
+        {
+         "text": "그 그림 봤니? 그럼 문제 하나! 우리 프랑스 사람들은 세 신분으로 나뉜단다. 피라미드에 맞춰 보렴.",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "picture": "cu_estates",
+         "text": "세 신분 피라미드 판이다. 설명을 읽고 맞춰 보자."
+        },
+        {
+         "picture": "cu_estates",
+         "dial": {
+          "labels": [
+           "맨 위 (1%도 안 됨)",
+           "가운데 (약 1.5%)",
+           "맨 아래 (약 98%)"
+          ],
+          "slots": [
+           [
+            "성직자",
+            "귀족",
+            "평민"
+           ],
+           [
+            "성직자",
+            "귀족",
+            "평민"
+           ],
+           [
+            "성직자",
+            "귀족",
+            "평민"
+           ]
+          ],
+          "answer": [
+           "성직자",
+           "귀족",
+           "평민"
+          ],
+          "question": "구체제 신분 피라미드: 제1·2·3신분을 차례로!"
+         },
+         "success": [
+          {
+           "solve": "q_estates",
+           "effect": "sparkle",
+           "target": "dubois",
+           "text": "맞았다! 피라미드 판이 딸깍 맞춰졌다."
+          },
+          {
+           "text": "그래. 제1신분 성직자, 제2신분 귀족은 합쳐서 2%쯤인데 땅의 3분의 1 넘게 갖고 세금은 거의 안 냈어.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "text": "인구의 98%인 제3신분이 세금을 다 냈지. 이런 낡은 체제를 '구체제(앙시앵 레짐)'라고 부른단다.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "goal": "다락 계단과 활자 상자도 조사해 보자 (소책자를 찾아라)"
+          }
+         ],
+         "fail": [
+          {
+           "text": "음, 다시 생각해 보렴. 벽의 그림에서 누가 누구 등에 업혀 있었지? 다시 말을 걸면 또 해 볼 수 있어.",
+           "speaker": "뒤부아 아저씨"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "먼저 벽에 걸린 그림을 보렴. 요즘 파리에서 가장 많이 팔리는 판화란다.",
+         "speaker": "뒤부아 아저씨"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "paul",
+     "label": "폴 (단짝 친구)",
+     "visible": {
+      "noFlag": "paul_gone"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "c1"
+       },
+       "steps": [
+        {
+         "text": "요즘 국경 너머 왕들이 혁명을 망치려 한대. 나라가 위험하면 나도 싸우러 갈 거야.",
+         "speaker": "폴"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "p_done"
+       },
+       "steps": [
+        {
+         "text": "바스티유에서 보자! 먼저 갈게!",
+         "speaker": "폴"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "아저씨가 그러는데 베르사유에서 삼부회가 열렸대. 근데 신분별로 한 표씩이라 제3신분은 늘 2대 1로 진대!",
+         "speaker": "폴"
+        },
+        {
+         "text": "우리는 인구가 훨씬 많은데 말이야. 머릿수대로 투표해야 공평하지!",
+         "speaker": "폴"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "clair",
+     "label": "클레르",
+     "visible": {
+      "flag": "clair_visit",
+      "noFlag": "c2"
+     },
+     "steps": [
+      {
+       "text": "아버지는 혁명이 무섭대요. 하지만 인권 선언에 '모든 사람'이라고 쓰여 있잖아요. 나도 사람이니까 읽어도 되겠죠?",
+       "speaker": "클레르"
+      }
+     ]
+    },
+    {
+     "id": "satire",
+     "label": "벽에 걸린 그림",
+     "mark": "그림",
+     "markIf": {
+      "noFlag": "satire_seen"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "c3"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "q_code",
+          "noFlag": "ch4_mem"
+         },
+         "then": [
+          {
+           "picture": "cu_src_coronation",
+           "text": "사료: 다비드 「나폴레옹 1세의 대관식」(1805~1807). 1804년 12월 2일, 노트르담 대성당에서 열린 대관식을 그렸다."
+          },
+          {
+           "text": "이 그림을 판화로 찍기로 했어. 그날 성당에 있던 사람에게 들은 걸 떠올려 보렴. 그림 속에 숨은 이야기가 세 가지 있대.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "flag": "ch4_mem"
+          },
+          {
+           "effect": "flash",
+           "text": "(그날의 성당이 그림처럼 떠오른다... 회상: 1804년 12월 2일, 노트르담 대성당)",
+           "se": "Move1"
+          },
+          {
+           "go": "coronation",
+           "fade": "white"
+          }
+         ],
+         "else": [
+          {
+           "picture": "cu_src_alps",
+           "text": "사료: 다비드 「알프스산맥을 넘는 나폴레옹」(1801). 실제로는 날씨 좋은 날 노새를 타고 넘었대요. 영웅처럼 보이게 그린 선전 그림이에요."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "c2"
+       },
+       "steps": [
+        {
+         "text": "그림이 떼어진 자리에 '자유·평등·우애' 표어가 붙어 있다."
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "flag": "satire_seen",
+         "picture": "cu_src_satire",
+         "text": "사료: 「제3신분이 짐을 지다」(1789년 무렵의 풍자화). 허리 굽은 농민이 성직자와 귀족을 업고 있다."
+        },
+        {
+         "text": "농부 할아버지가 지팡이를 짚고... 등에 신부님과 귀족을 업고 있네. 발밑엔 새랑 토끼가 곡식을 먹고 있고.",
+         "speaker": "{name}"
+        },
+        {
+         "text": "귀족은 사냥 특권이 있어서 농민이 짐승을 잡지도 못했단다. 그 그림이 곧 지금 프랑스야.",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "goal": "뒤부아 아저씨에게 말을 걸자"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "type_case",
+     "label": "활자 상자",
+     "cases": [
+      {
+       "if": {
+        "flag": "q_estates",
+        "noItem": "pamphlet"
+       },
+       "steps": [
+        {
+         "text": "활자 상자 사이에 얇은 소책자가 끼어 있다!"
+        },
+        {
+         "give": "pamphlet",
+         "flag": "pamphlet_read",
+         "picture": "cu_sieyes",
+         "effect": "sparkle",
+         "target": "type_case",
+         "text": "시에예스의 소책자 「제3신분이란 무엇인가?」를 찾았다!"
+        },
+        {
+         "text": "'제3신분이란 무엇인가? 전부다. 지금까지 정치에서 무엇이었나? 아무것도 아니었다. 무엇을 바라는가? 무엇인가가 되는 것.'",
+         "speaker": "{name}"
+        },
+        {
+         "text": "와, 짧은데 엄청 세다. 아저씨께 보여 드리자.",
+         "speaker": "{name}"
+        },
+        {
+         "goal": "뒤부아 아저씨에게 소책자 이야기를 하자"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "납으로 만든 활자가 칸칸이 들어 있다. 글자가 좌우로 뒤집혀 있어 거울에 비춰야 읽힌다."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "attic",
+     "label": "다락 계단",
+     "cases": [
+      {
+       "if": {
+        "noItem": "flyer1"
+       },
+       "steps": [
+        {
+         "text": "다락에 올라가 보니 먼지 쌓인 종이 뭉치가 있다."
+        },
+        {
+         "give": "flyer1",
+         "effect": "sparkle",
+         "target": "attic",
+         "text": "숨은 전단지 ① '삼부회 진정서'를 찾았다!"
+        },
+        {
+         "picture": "cu_flyer1",
+         "text": "마을 사람들이 왕에게 바라는 일을 적은 '진정서'의 한 부분이다. 6장을 모두 모으면 특별한 일이 생긴다는데..."
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "다락. 내가 자는 곳이다. 짚 매트리스와 작은 창문."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "press",
+     "label": "인쇄기",
+     "mark": "인쇄기",
+     "markIf": {
+      "flag": "press_mark"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "ch6_print"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "front6"
+         },
+         "then": [
+          {
+           "text": "인쇄기가 쉬고 있다."
+          }
+         ],
+         "else": [
+          {
+           "text": "자, 오늘 1면 머리기사를 정하자. 사람들이 꼭 알아야 할 사실을 크게 실어야 해.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "choice": [
+            "워털루 전투 · 빈 회의, 유럽을 혁명 이전으로",
+            "황제가 하늘을 날아 돌아온다더라",
+            "센강에서 큰 물고기가 잡혔다"
+           ],
+           "answer": 1,
+           "question": "신문 ⑥면 머리기사로 알맞은 것은?",
+           "success": [
+            {
+             "effect": "flash",
+             "se": "Hammer",
+             "text": "철컥, 철컥! 인쇄기가 돌아가며 신문이 쏟아져 나온다."
+            },
+            {
+             "picture": "cu_front6",
+             "give": "front6",
+             "text": "신문 ⑥면 '워털루 · 빈 회의'를 찍었다!"
+            },
+            {
+             "flag": "front6"
+            },
+            {
+             "flag": [
+              "c6"
+             ],
+             "unflag": "press_mark",
+             "solve": "ch6"
+            },
+            {
+             "progressSave": true,
+             "speaker": "기록",
+             "text": "6장 끝! 자동 저장했어요! 이어하기 번호: {code}   (다른 컴퓨터에서 이어 할 때 처음 화면에서 입력하세요. 마지막 번호만 적어 두면 돼요)"
+            },
+            {
+             "goal": "뒤부아 아저씨에게 말을 걸자 (에필로그)"
+            }
+           ],
+           "fail": [
+            {
+             "text": "음... 그건 소문이거나 오늘 일의 핵심이 아니야. 오늘 직접 보고 들은 걸 떠올려 봐. 다시 인쇄기를 조사하렴.",
+             "speaker": "뒤부아 아저씨"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "ch5_print"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "front5"
+         },
+         "then": [
+          {
+           "text": "인쇄기가 쉬고 있다."
+          }
+         ],
+         "else": [
+          {
+           "text": "자, 오늘 1면 머리기사를 정하자. 사람들이 꼭 알아야 할 사실을 크게 실어야 해.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "choice": [
+            "러시아 원정 실패, 대육군이 눈 속에서 무너지다",
+            "황제 폐하의 건강은 아주 좋다",
+            "모스크바에서 큰 잔치가 열렸다"
+           ],
+           "answer": 1,
+           "question": "신문 ⑤면 머리기사로 알맞은 것은?",
+           "success": [
+            {
+             "effect": "flash",
+             "se": "Hammer",
+             "text": "철컥, 철컥! 인쇄기가 돌아가며 신문이 쏟아져 나온다."
+            },
+            {
+             "picture": "cu_front5",
+             "give": "front5",
+             "text": "신문 ⑤면 '러시아의 눈'을 찍었다! 정부 공보와 달리, 우리는 본 대로 썼다."
+            },
+            {
+             "flag": "front5"
+            },
+            {
+             "flag": [
+              "c5"
+             ],
+             "unflag": "press_mark",
+             "solve": "ch5"
+            },
+            {
+             "progressSave": true,
+             "speaker": "기록",
+             "text": "5장 끝! 자동 저장했어요! 이어하기 번호: {code}   (다른 컴퓨터에서 이어 할 때 처음 화면에서 입력하세요. 마지막 번호만 적어 두면 돼요)"
+            },
+            {
+             "text": "── 1814년, 나폴레옹은 여러 나라 연합군에게 져서 엘바섬으로 쫓겨났다. 그리고 1815년 3월..."
+            },
+            {
+             "goal": "6장: 인쇄소 문을 나서 1815년의 파리 거리로"
+            }
+           ],
+           "fail": [
+            {
+             "text": "음... 그건 소문이거나 오늘 일의 핵심이 아니야. 오늘 직접 보고 들은 걸 떠올려 봐. 다시 인쇄기를 조사하렴.",
+             "speaker": "뒤부아 아저씨"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "ch4_print"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "front4"
+         },
+         "then": [
+          {
+           "text": "인쇄기가 쉬고 있다."
+          }
+         ],
+         "else": [
+          {
+           "text": "자, 오늘 1면 머리기사를 정하자. 사람들이 꼭 알아야 할 사실을 크게 실어야 해.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "choice": [
+            "나폴레옹, 스스로 황제의 관을 쓰다",
+            "교황이 나폴레옹에게 관을 씌웠다",
+            "대관식이 비 때문에 미뤄졌다"
+           ],
+           "answer": 1,
+           "question": "신문 ④면 머리기사로 알맞은 것은?",
+           "success": [
+            {
+             "effect": "flash",
+             "se": "Hammer",
+             "text": "철컥, 철컥! 인쇄기가 돌아가며 신문이 쏟아져 나온다."
+            },
+            {
+             "picture": "cu_front4",
+             "give": "front4",
+             "text": "신문 ④면 '황제 나폴레옹'을 찍었다!"
+            },
+            {
+             "flag": "front4"
+            },
+            {
+             "text": "혁명으로 왕을 없앴는데, 15년 만에 황제라니... 그래도 국민 투표로 뽑혔고, 법전은 혁명의 성과를 지켰지. 참 복잡한 사람이야.",
+             "speaker": "뒤부아 아저씨"
+            },
+            {
+             "text": "── 나폴레옹은 유럽 대부분을 정복하고, 1806년 영국과의 무역을 막는 '대륙 봉쇄령'을 내렸다. 그것을 어긴 러시아를 치러 1812년, 60만 대군이 떠났다."
+            },
+            {
+             "text": "나도 군대의 '이동 인쇄소' 인쇄병으로 뽑혔다. 원정길에서 황제의 공보를 찍는 일이다. 그리고... 폴도 그 군대에 있다!",
+             "speaker": "{name}"
+            },
+            {
+             "flag": [
+              "c4"
+             ],
+             "unflag": "press_mark",
+             "solve": "ch4"
+            },
+            {
+             "progressSave": true,
+             "speaker": "기록",
+             "text": "4장 끝! 자동 저장했어요! 이어하기 번호: {code}   (다른 컴퓨터에서 이어 할 때 처음 화면에서 입력하세요. 마지막 번호만 적어 두면 돼요)"
+            },
+            {
+             "goal": "5장: 인쇄소 문을 나서 러시아 원정길로"
+            }
+           ],
+           "fail": [
+            {
+             "text": "음... 그건 소문이거나 오늘 일의 핵심이 아니야. 오늘 직접 보고 들은 걸 떠올려 봐. 다시 인쇄기를 조사하렴.",
+             "speaker": "뒤부아 아저씨"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "c3"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "q_code"
+         },
+         "then": [
+          {
+           "text": "법전 인쇄판이 짜여 있다."
+          }
+         ],
+         "else": [
+          {
+           "if": {
+            "flag": "paul_letter"
+           },
+           "then": [
+            {
+             "text": "── 1799년 11월, 나폴레옹은 군대를 이끌고 의회를 몰아내 '통령'이 되었다(브뤼메르 쿠데타). 그리고 1804년, 새 법전을 만들었다."
+            },
+            {
+             "text": "이번 일감은 '프랑스 민법전', 사람들은 나폴레옹 법전이라 부르지. 조항을 짜기 전에, 이게 혁명의 성과인지 한계인지 따져 보자.",
+             "speaker": "뒤부아 아저씨"
+            },
+            {
+             "picture": "cu_code",
+             "text": "법전 원고의 네 조항이다. 하나씩 읽어 보자."
+            },
+            {
+             "picture": "cu_code",
+             "dial": {
+              "labels": [
+               "법 앞의 평등",
+               "재산 보호",
+               "종교의 자유",
+               "아내의 복종"
+              ],
+              "slots": [
+               [
+                "혁명의 성과",
+                "한계"
+               ],
+               [
+                "혁명의 성과",
+                "한계"
+               ],
+               [
+                "혁명의 성과",
+                "한계"
+               ],
+               [
+                "혁명의 성과",
+                "한계"
+               ]
+              ],
+              "answer": [
+               "혁명의 성과",
+               "혁명의 성과",
+               "혁명의 성과",
+               "한계"
+              ],
+              "question": "나폴레옹 법전(1804): 혁명의 성과일까, 한계일까?"
+             },
+             "success": [
+              {
+               "solve": "q_code",
+               "effect": "sparkle",
+               "target": "press",
+               "text": "판정 완료! 법전 인쇄판이 짜였다."
+              },
+              {
+               "text": "그래. 나폴레옹 법전은 신분 특권을 없애고 법 앞의 평등과 재산권을 지켰어. 혁명의 성과를 법으로 굳힌 셈이지.",
+               "speaker": "뒤부아 아저씨"
+              },
+              {
+               "text": "하지만 여성은 남편의 허락 없이 재산을 다루지도 못했단다. 이 법전은 나중에 유럽 여러 나라 법의 본보기가 돼.",
+               "speaker": "뒤부아 아저씨"
+              },
+              {
+               "goal": "그림 속 대관식 이야기를 확인하자 (벽의 그림 → 회상)"
+              }
+             ],
+             "fail": [
+              {
+               "text": "하나가 틀렸어. '모두에게 똑같이'면 성과, '누군가를 묶어 두면' 한계야. 다시 인쇄기를 조사하렴.",
+               "speaker": "뒤부아 아저씨"
+              }
+             ]
+            }
+           ],
+           "else": [
+            {
+             "text": "아저씨가 다음 일감을 기다리고 있다. 먼저 우편함부터!"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "ch3_print"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "front3"
+         },
+         "then": [
+          {
+           "text": "인쇄기가 쉬고 있다."
+          }
+         ],
+         "else": [
+          {
+           "text": "자, 오늘 1면 머리기사를 정하자. 사람들이 꼭 알아야 할 사실을 크게 실어야 해.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "choice": [
+            "테르미도르 9일, 로베스피에르 몰락 · 공포 정치 끝나다",
+            "단두대가 스스로 부서졌다더라",
+            "왕이 살아 돌아왔다"
+           ],
+           "answer": 1,
+           "question": "신문 ③면 머리기사로 알맞은 것은?",
+           "success": [
+            {
+             "effect": "flash",
+             "se": "Hammer",
+             "text": "철컥, 철컥! 인쇄기가 돌아가며 신문이 쏟아져 나온다."
+            },
+            {
+             "picture": "cu_front3",
+             "give": "front3",
+             "text": "신문 ③면 '공포 정치의 끝'을 찍었다!"
+            },
+            {
+             "flag": "front3"
+            },
+            {
+             "text": "1794년 7월, 로베스피에르가 체포되어 처형되었어. 공포 정치는 끝났지만, 사람들은 지쳤단다.",
+             "speaker": "뒤부아 아저씨"
+            },
+            {
+             "text": "그 뒤 '총재 정부'가 들어섰지만 힘이 약했지. 사람들은 나라를 지켜 줄 강한 사람을 바라기 시작했어...",
+             "speaker": "뒤부아 아저씨"
+            },
+            {
+             "flag": [
+              "c3"
+             ],
+             "unflag": "press_mark",
+             "solve": "ch3"
+            },
+            {
+             "progressSave": true,
+             "speaker": "기록",
+             "text": "3장 끝! 자동 저장했어요! 이어하기 번호: {code}   (다른 컴퓨터에서 이어 할 때 처음 화면에서 입력하세요. 마지막 번호만 적어 두면 돼요)"
+            },
+            {
+             "goal": "4장: 뒤부아 아저씨에게 말을 걸자 (1799년)"
+            }
+           ],
+           "fail": [
+            {
+             "text": "음... 그건 소문이거나 오늘 일의 핵심이 아니야. 오늘 직접 보고 들은 걸 떠올려 봐. 다시 인쇄기를 조사하렴.",
+             "speaker": "뒤부아 아저씨"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "ch2_print"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "front2"
+         },
+         "then": [
+          {
+           "text": "인쇄기가 쉬고 있다."
+          }
+         ],
+         "else": [
+          {
+           "if": {
+            "flag": "q_1792"
+           },
+           "then": [
+            {
+             "text": "자, 오늘 1면 머리기사를 정하자. 사람들이 꼭 알아야 할 사실을 크게 실어야 해.",
+             "speaker": "뒤부아 아저씨"
+            },
+            {
+             "choice": [
+              "왕의 도주, 바렌에서 막히다 · 프랑스는 공화국으로",
+              "왕이 하늘로 날아갔다더라",
+              "빵값이 내렸다"
+             ],
+             "answer": 1,
+             "question": "신문 ②면 머리기사로 알맞은 것은?",
+             "success": [
+              {
+               "effect": "flash",
+               "se": "Hammer",
+               "text": "철컥, 철컥! 인쇄기가 돌아가며 신문이 쏟아져 나온다."
+              },
+              {
+               "picture": "cu_front2",
+               "give": "front2",
+               "text": "신문 ②면 '왕의 도주 · 공화국'을 찍었다!"
+              },
+              {
+               "flag": "front2"
+              },
+              {
+               "text": "{name}, 나... 의용군에 들어가기로 했어. 조국이 위험하대. 국경으로 간다.",
+               "speaker": "폴"
+              },
+              {
+               "text": "폴! 몸조심해. 꼭 편지 해!",
+               "speaker": "{name}"
+              },
+              {
+               "text": "걱정 마. 돌아오면 네 신문에 내 이름 크게 실어 줘!",
+               "speaker": "폴"
+              },
+              {
+               "flag": [
+                "c2",
+                "paul_gone"
+               ],
+               "solve": "ch2"
+              },
+              {
+               "progressSave": true,
+               "speaker": "기록",
+               "text": "2장 끝! 자동 저장했어요! 이어하기 번호: {code}   (다른 컴퓨터에서 이어 할 때 처음 화면에서 입력하세요. 마지막 번호만 적어 두면 돼요)"
+              },
+              {
+               "text": "── 1793년 1월. 폴이 떠난 지 넉 달. 파리는 왕의 재판 이야기로 들끓는다."
+              },
+              {
+               "goal": "3장: 뒤부아 아저씨에게 말을 걸자 (1793년)"
+              }
+             ],
+             "fail": [
+              {
+               "text": "음... 그건 소문이거나 오늘 일의 핵심이 아니야. 오늘 직접 보고 들은 걸 떠올려 봐. 다시 인쇄기를 조사하렴.",
+               "speaker": "뒤부아 아저씨"
+              }
+             ]
+            }
+           ],
+           "else": [
+            {
+             "text": "1면을 찍기 전에, 벽보부터 차례대로 맞춰 보렴.",
+             "speaker": "뒤부아 아저씨"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "bast_done"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "front1"
+         },
+         "then": [
+          {
+           "text": "인쇄기가 쉬고 있다."
+          }
+         ],
+         "else": [
+          {
+           "if": {
+            "flag": "q_rights"
+           },
+           "then": [
+            {
+             "text": "자, 오늘 1면 머리기사를 정하자. 사람들이 꼭 알아야 할 사실을 크게 실어야 해.",
+             "speaker": "뒤부아 아저씨"
+            },
+            {
+             "choice": [
+              "바스티유 함락! 시민이 요새를 무너뜨리다",
+              "왕비가 케이크를 먹으라고 했다더라",
+              "오늘 날씨 맑음"
+             ],
+             "answer": 1,
+             "question": "신문 ①면 머리기사로 알맞은 것은?",
+             "success": [
+              {
+               "effect": "flash",
+               "se": "Hammer",
+               "text": "철컥, 철컥! 인쇄기가 돌아가며 신문이 쏟아져 나온다."
+              },
+              {
+               "picture": "cu_front1",
+               "give": "front1",
+               "text": "신문 ①면 '바스티유 함락 · 인권 선언'을 찍었다! (가방에서 다시 볼 수 있어요)"
+              },
+              {
+               "flag": "front1"
+              },
+              {
+               "flag": "clair_visit",
+               "text": "딸랑. 그때 인쇄소 문이 열리더니, 비단 옷을 입은 소녀가 조심스레 들어왔다."
+              },
+              {
+               "text": "저... 이 신문 한 부 주시겠어요? 집에서는 이런 신문을 못 읽게 해서요.",
+               "speaker": "클레르"
+              },
+              {
+               "text": "나는 클레르. 아버지는 귀족이에요. 하지만 나도 세상이 어떻게 바뀌는지 알고 싶어요.",
+               "speaker": "클레르"
+              },
+              {
+               "text": "(귀족 아가씨가 혁명 신문을? 신기한 애다.)",
+               "speaker": "{name}"
+              },
+              {
+               "flag": "c1",
+               "solve": "ch1"
+              },
+              {
+               "unflag": "press_mark"
+              },
+              {
+               "progressSave": true,
+               "speaker": "기록",
+               "text": "1장 끝! 자동 저장했어요! 이어하기 번호: {code}   (다른 컴퓨터에서 이어 할 때 처음 화면에서 입력하세요. 마지막 번호만 적어 두면 돼요)"
+              },
+              {
+               "text": "── 2년이 흘렀다. 1791년 6월 21일 아침."
+              },
+              {
+               "goal": "2장: 뒤부아 아저씨에게 말을 걸자 (1791년)"
+              }
+             ],
+             "fail": [
+              {
+               "text": "음... 그건 소문이거나 오늘 일의 핵심이 아니야. 오늘 직접 보고 들은 걸 떠올려 봐. 다시 인쇄기를 조사하렴.",
+               "speaker": "뒤부아 아저씨"
+              }
+             ]
+            }
+           ],
+           "else": [
+            {
+             "if": {
+              "flag": "q_print"
+             },
+             "then": [
+              {
+               "text": "이제 빈칸에 들어갈 활자를 고르자.",
+               "speaker": "뒤부아 아저씨"
+              },
+              {
+               "picture": "cu_rights_blank",
+               "text": "선언문 원고다. 제1조와 제3조에 빈칸 ①②③이 있다. 천천히 읽어 보자."
+              },
+              {
+               "picture": "cu_rights_blank",
+               "dial": {
+                "labels": [
+                 "① ○○롭고",
+                 "② ○○하게",
+                 "③ ○○의 근원"
+                ],
+                "slots": [
+                 [
+                  "자유",
+                  "평등",
+                  "주권",
+                  "재산"
+                 ],
+                 [
+                  "자유",
+                  "평등",
+                  "주권",
+                  "재산"
+                 ],
+                 [
+                  "자유",
+                  "평등",
+                  "주권",
+                  "재산"
+                 ]
+                ],
+                "answer": [
+                 "자유",
+                 "평등",
+                 "주권"
+                ],
+                "question": "인권 선언의 빈칸 ①②③에 들어갈 말은?"
+               },
+               "success": [
+                {
+                 "solve": "q_rights",
+                 "effect": "firework",
+                 "target": "press",
+                 "text": "빈칸이 모두 맞았다! 활자가 판에 단단히 박혔다."
+                },
+                {
+                 "picture": "cu_src_rights",
+                 "text": "사료: 「인간과 시민의 권리 선언」(1789. 8. 26). 르 바르비에가 그린 그림. 위쪽의 눈은 '이성'을, 깨진 사슬은 '자유'를 뜻한다고 해요."
+                },
+                {
+                 "text": "자유, 평등, 국민 주권! 신분이 아니라 '사람'이라서 권리가 있다는 말이야. 세상이 뒤집히는 소리지.",
+                 "speaker": "뒤부아 아저씨"
+                },
+                {
+                 "text": "그런데 아저씨, '모든 사람'에 여자도 들어가요?",
+                 "speaker": "{name}"
+                },
+                {
+                 "text": "허허, 좋은 질문이다. 올랭프 드 구주라는 작가가 '여성과 여성 시민의 권리 선언'을 써서 똑같은 질문을 했단다. 아직 갈 길이 멀어.",
+                 "speaker": "뒤부아 아저씨"
+                },
+                {
+                 "text": "자, 오늘 1면 머리기사를 정하자. 사람들이 꼭 알아야 할 사실을 크게 실어야 해.",
+                 "speaker": "뒤부아 아저씨"
+                },
+                {
+                 "choice": [
+                  "바스티유 함락! 시민이 요새를 무너뜨리다",
+                  "왕비가 케이크를 먹으라고 했다더라",
+                  "오늘 날씨 맑음"
+                 ],
+                 "answer": 1,
+                 "question": "신문 ①면 머리기사로 알맞은 것은?",
+                 "success": [
+                  {
+                   "effect": "flash",
+                   "se": "Hammer",
+                   "text": "철컥, 철컥! 인쇄기가 돌아가며 신문이 쏟아져 나온다."
+                  },
+                  {
+                   "picture": "cu_front1",
+                   "give": "front1",
+                   "text": "신문 ①면 '바스티유 함락 · 인권 선언'을 찍었다! (가방에서 다시 볼 수 있어요)"
+                  },
+                  {
+                   "flag": "front1"
+                  },
+                  {
+                   "flag": "clair_visit",
+                   "text": "딸랑. 그때 인쇄소 문이 열리더니, 비단 옷을 입은 소녀가 조심스레 들어왔다."
+                  },
+                  {
+                   "text": "저... 이 신문 한 부 주시겠어요? 집에서는 이런 신문을 못 읽게 해서요.",
+                   "speaker": "클레르"
+                  },
+                  {
+                   "text": "나는 클레르. 아버지는 귀족이에요. 하지만 나도 세상이 어떻게 바뀌는지 알고 싶어요.",
+                   "speaker": "클레르"
+                  },
+                  {
+                   "text": "(귀족 아가씨가 혁명 신문을? 신기한 애다.)",
+                   "speaker": "{name}"
+                  },
+                  {
+                   "flag": "c1",
+                   "solve": "ch1"
+                  },
+                  {
+                   "unflag": "press_mark"
+                  },
+                  {
+                   "progressSave": true,
+                   "speaker": "기록",
+                   "text": "1장 끝! 자동 저장했어요! 이어하기 번호: {code}   (다른 컴퓨터에서 이어 할 때 처음 화면에서 입력하세요. 마지막 번호만 적어 두면 돼요)"
+                  },
+                  {
+                   "text": "── 2년이 흘렀다. 1791년 6월 21일 아침."
+                  },
+                  {
+                   "goal": "2장: 뒤부아 아저씨에게 말을 걸자 (1791년)"
+                  }
+                 ],
+                 "fail": [
+                  {
+                   "text": "음... 그건 소문이거나 오늘 일의 핵심이 아니야. 오늘 직접 보고 들은 걸 떠올려 봐. 다시 인쇄기를 조사하렴.",
+                   "speaker": "뒤부아 아저씨"
+                  }
+                 ]
+                }
+               ],
+               "fail": [
+                {
+                 "text": "하나가 틀렸구나. 선언문 원고를 다시 읽고 인쇄기를 조사하렴. 힌트: 두 단어는 '○○롭게, ○○하게', 마지막은 나라의 주인 되는 힘!",
+                 "speaker": "뒤부아 아저씨"
+                }
+               ]
+              }
+             ],
+             "else": [
+              {
+               "text": "1789년 8월 26일, 국민 의회가 '인간과 시민의 권리 선언'을 발표했다! 오늘 밤 안에 찍어서 파리에 뿌리자!",
+               "speaker": "뒤부아 아저씨"
+              },
+              {
+               "text": "종이를 넣고, 판을 누르고, 꺼내고! 손잡이가 초록 칸에 왔을 때 누르렴.",
+               "speaker": "뒤부아 아저씨"
+              },
+              {
+               "timing": {
+                "goal": 8,
+                "maxMiss": 4,
+                "speed": 1.4,
+                "zone": 0.24,
+                "label": "인권 선언 인쇄",
+                "per": 100,
+                "unit": "장",
+                "success": [
+                 {
+                  "flag": "q_print",
+                  "effect": "sparkle",
+                  "target": "press",
+                  "text": "800장을 찍었다! 그런데 마지막 판에 활자 세 개가 빠져 있다."
+                 },
+                 {
+                  "text": "이런, 빈칸이 생겼구나! 선언문 원고를 보고 알맞은 활자를 넣자.",
+                  "speaker": "뒤부아 아저씨"
+                 },
+                 {
+                  "picture": "cu_rights_blank",
+                  "text": "선언문 원고다. 제1조와 제3조에 빈칸 ①②③이 있다. 천천히 읽어 보자."
+                 },
+                 {
+                  "picture": "cu_rights_blank",
+                  "dial": {
+                   "labels": [
+                    "① ○○롭고",
+                    "② ○○하게",
+                    "③ ○○의 근원"
+                   ],
+                   "slots": [
+                    [
+                     "자유",
+                     "평등",
+                     "주권",
+                     "재산"
+                    ],
+                    [
+                     "자유",
+                     "평등",
+                     "주권",
+                     "재산"
+                    ],
+                    [
+                     "자유",
+                     "평등",
+                     "주권",
+                     "재산"
+                    ]
+                   ],
+                   "answer": [
+                    "자유",
+                    "평등",
+                    "주권"
+                   ],
+                   "question": "인권 선언의 빈칸 ①②③에 들어갈 말은?"
+                  },
+                  "success": [
+                   {
+                    "solve": "q_rights",
+                    "effect": "firework",
+                    "target": "press",
+                    "text": "빈칸이 모두 맞았다! 활자가 판에 단단히 박혔다."
+                   },
+                   {
+                    "picture": "cu_src_rights",
+                    "text": "사료: 「인간과 시민의 권리 선언」(1789. 8. 26). 르 바르비에가 그린 그림. 위쪽의 눈은 '이성'을, 깨진 사슬은 '자유'를 뜻한다고 해요."
+                   },
+                   {
+                    "text": "자유, 평등, 국민 주권! 신분이 아니라 '사람'이라서 권리가 있다는 말이야. 세상이 뒤집히는 소리지.",
+                    "speaker": "뒤부아 아저씨"
+                   },
+                   {
+                    "text": "그런데 아저씨, '모든 사람'에 여자도 들어가요?",
+                    "speaker": "{name}"
+                   },
+                   {
+                    "text": "허허, 좋은 질문이다. 올랭프 드 구주라는 작가가 '여성과 여성 시민의 권리 선언'을 써서 똑같은 질문을 했단다. 아직 갈 길이 멀어.",
+                    "speaker": "뒤부아 아저씨"
+                   },
+                   {
+                    "text": "자, 오늘 1면 머리기사를 정하자. 사람들이 꼭 알아야 할 사실을 크게 실어야 해.",
+                    "speaker": "뒤부아 아저씨"
+                   },
+                   {
+                    "choice": [
+                     "바스티유 함락! 시민이 요새를 무너뜨리다",
+                     "왕비가 케이크를 먹으라고 했다더라",
+                     "오늘 날씨 맑음"
+                    ],
+                    "answer": 1,
+                    "question": "신문 ①면 머리기사로 알맞은 것은?",
+                    "success": [
+                     {
+                      "effect": "flash",
+                      "se": "Hammer",
+                      "text": "철컥, 철컥! 인쇄기가 돌아가며 신문이 쏟아져 나온다."
+                     },
+                     {
+                      "picture": "cu_front1",
+                      "give": "front1",
+                      "text": "신문 ①면 '바스티유 함락 · 인권 선언'을 찍었다! (가방에서 다시 볼 수 있어요)"
+                     },
+                     {
+                      "flag": "front1"
+                     },
+                     {
+                      "flag": "clair_visit",
+                      "text": "딸랑. 그때 인쇄소 문이 열리더니, 비단 옷을 입은 소녀가 조심스레 들어왔다."
+                     },
+                     {
+                      "text": "저... 이 신문 한 부 주시겠어요? 집에서는 이런 신문을 못 읽게 해서요.",
+                      "speaker": "클레르"
+                     },
+                     {
+                      "text": "나는 클레르. 아버지는 귀족이에요. 하지만 나도 세상이 어떻게 바뀌는지 알고 싶어요.",
+                      "speaker": "클레르"
+                     },
+                     {
+                      "text": "(귀족 아가씨가 혁명 신문을? 신기한 애다.)",
+                      "speaker": "{name}"
+                     },
+                     {
+                      "flag": "c1",
+                      "solve": "ch1"
+                     },
+                     {
+                      "unflag": "press_mark"
+                     },
+                     {
+                      "progressSave": true,
+                      "speaker": "기록",
+                      "text": "1장 끝! 자동 저장했어요! 이어하기 번호: {code}   (다른 컴퓨터에서 이어 할 때 처음 화면에서 입력하세요. 마지막 번호만 적어 두면 돼요)"
+                     },
+                     {
+                      "text": "── 2년이 흘렀다. 1791년 6월 21일 아침."
+                     },
+                     {
+                      "goal": "2장: 뒤부아 아저씨에게 말을 걸자 (1791년)"
+                     }
+                    ],
+                    "fail": [
+                     {
+                      "text": "음... 그건 소문이거나 오늘 일의 핵심이 아니야. 오늘 직접 보고 들은 걸 떠올려 봐. 다시 인쇄기를 조사하렴.",
+                      "speaker": "뒤부아 아저씨"
+                     }
+                    ]
+                   }
+                  ],
+                  "fail": [
+                   {
+                    "text": "하나가 틀렸구나. 선언문 원고를 다시 읽고 인쇄기를 조사하렴. 힌트: 두 단어는 '○○롭게, ○○하게', 마지막은 나라의 주인 되는 힘!",
+                    "speaker": "뒤부아 아저씨"
+                   }
+                  ]
+                 }
+                ],
+                "fail": [
+                 {
+                  "text": "종이가 구겨졌구나. 괜찮아, 다시 인쇄기를 조사하렴.",
+                  "speaker": "뒤부아 아저씨"
+                 }
+                ]
+               }
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "나무로 만든 인쇄기. 판에 활자를 짜 넣고 종이를 올려 손잡이를 당기면 찍힌다. 하루에 수천 장도 찍는다."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "counter",
+     "label": "계산대",
+     "cases": [
+      {
+       "if": {
+        "flag": "c3"
+       },
+       "steps": [
+        {
+         "text": "계산대 위에 신문과 정부 공보가 쌓여 있다. 나폴레옹 정부는 신문을 엄하게 검열한다."
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "오늘 팔 신문과 소책자가 쌓여 있다. 요즘 파리에서는 하루에도 새 신문이 몇 개씩 생긴다."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "news_wall",
+     "label": "벽보판",
+     "mark": "벽보",
+     "markIf": {
+      "flag": "ch2_print",
+      "noFlag": "q_1792"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "ch2_print",
+        "noFlag": "q_1792"
+       },
+       "steps": [
+        {
+         "text": "바렌 사건 다음 일들을 벽보로 붙여 두었는데 순서가 뒤섞였구나. 차례대로 붙여 보렴.",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "picture": "cu_1792",
+         "text": "1791~1792년 벽보 네 장. 날짜를 보고 차례대로 붙이자."
+        },
+        {
+         "picture": "cu_1792",
+         "dial": {
+          "labels": [
+           "첫째",
+           "둘째",
+           "셋째",
+           "넷째"
+          ],
+          "slots": [
+           [
+            "1791 헌법",
+            "전쟁 시작",
+            "왕궁 습격",
+            "공화국 선포"
+           ],
+           [
+            "1791 헌법",
+            "전쟁 시작",
+            "왕궁 습격",
+            "공화국 선포"
+           ],
+           [
+            "1791 헌법",
+            "전쟁 시작",
+            "왕궁 습격",
+            "공화국 선포"
+           ],
+           [
+            "1791 헌법",
+            "전쟁 시작",
+            "왕궁 습격",
+            "공화국 선포"
+           ]
+          ],
+          "answer": [
+           "1791 헌법",
+           "전쟁 시작",
+           "왕궁 습격",
+           "공화국 선포"
+          ],
+          "question": "1791~1792년 일을 일어난 차례대로!"
+         },
+         "success": [
+          {
+           "solve": "q_1792",
+           "effect": "sparkle",
+           "target": "news_wall",
+           "text": "벽보가 차례대로 딱 맞았다!"
+          },
+          {
+           "text": "왕이 도망치다 잡힌 뒤, 사람들은 더는 왕을 믿지 않았어. 1791년 헌법으로 왕의 힘을 줄였지만(입헌 군주제),",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "text": "이웃 나라 왕들이 혁명을 막으려 하자 1792년 4월 전쟁이 터졌고, 8월 10일 시민들이 왕궁을 습격했어. 그리고 9월, 국민 공회가 왕정을 없애고 공화국을 선포했단다.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "picture": "cu_treasure_marseillaise",
+           "give": "treasure_marseillaise",
+           "text": "★ 사료 카드 '라 마르세예즈'를 얻었다! 마르세유 의용군이 부르며 파리에 온 노래다."
+          },
+          {
+           "text": "자, 오늘 1면 머리기사를 정하자. 사람들이 꼭 알아야 할 사실을 크게 실어야 해.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "choice": [
+            "왕의 도주, 바렌에서 막히다 · 프랑스는 공화국으로",
+            "왕이 하늘로 날아갔다더라",
+            "빵값이 내렸다"
+           ],
+           "answer": 1,
+           "question": "신문 ②면 머리기사로 알맞은 것은?",
+           "success": [
+            {
+             "effect": "flash",
+             "se": "Hammer",
+             "text": "철컥, 철컥! 인쇄기가 돌아가며 신문이 쏟아져 나온다."
+            },
+            {
+             "picture": "cu_front2",
+             "give": "front2",
+             "text": "신문 ②면 '왕의 도주 · 공화국'을 찍었다!"
+            },
+            {
+             "flag": "front2"
+            },
+            {
+             "text": "{name}, 나... 의용군에 들어가기로 했어. 조국이 위험하대. 국경으로 간다.",
+             "speaker": "폴"
+            },
+            {
+             "text": "폴! 몸조심해. 꼭 편지 해!",
+             "speaker": "{name}"
+            },
+            {
+             "text": "걱정 마. 돌아오면 네 신문에 내 이름 크게 실어 줘!",
+             "speaker": "폴"
+            },
+            {
+             "flag": [
+              "c2",
+              "paul_gone"
+             ],
+             "solve": "ch2"
+            },
+            {
+             "progressSave": true,
+             "speaker": "기록",
+             "text": "2장 끝! 자동 저장했어요! 이어하기 번호: {code}   (다른 컴퓨터에서 이어 할 때 처음 화면에서 입력하세요. 마지막 번호만 적어 두면 돼요)"
+            },
+            {
+             "text": "── 1793년 1월. 폴이 떠난 지 넉 달. 파리는 왕의 재판 이야기로 들끓는다."
+            },
+            {
+             "goal": "3장: 뒤부아 아저씨에게 말을 걸자 (1793년)"
+            }
+           ],
+           "fail": [
+            {
+             "text": "음... 그건 소문이거나 오늘 일의 핵심이 아니야. 오늘 직접 보고 들은 걸 떠올려 봐. 다시 인쇄기를 조사하렴.",
+             "speaker": "뒤부아 아저씨"
+            }
+           ]
+          }
+         ],
+         "fail": [
+          {
+           "text": "차례가 틀렸어. 왕이 도망치다 잡힌 게 1791년 6월이었지? 그 뒤를 떠올려 봐. 벽보를 다시 조사하렴.",
+           "speaker": "뒤부아 아저씨"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "picture": "cu_frontwall",
+         "overlays": [
+          {
+           "picture": "cu_fw1",
+           "if": {
+            "item": "front1"
+           }
+          },
+          {
+           "picture": "cu_fw2",
+           "if": {
+            "item": "front2"
+           }
+          },
+          {
+           "picture": "cu_fw3",
+           "if": {
+            "item": "front3"
+           }
+          },
+          {
+           "picture": "cu_fw4",
+           "if": {
+            "item": "front4"
+           }
+          },
+          {
+           "picture": "cu_fw5",
+           "if": {
+            "item": "front5"
+           }
+          },
+          {
+           "picture": "cu_fw6",
+           "if": {
+            "item": "front6"
+           }
+          }
+         ],
+         "text": "우리 인쇄소가 찍은 신문 1면을 붙여 두는 벽보판이다."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "ink",
+     "label": "잉크 통",
+     "steps": [
+      {
+       "text": "검댕과 기름을 섞어 만든 인쇄 잉크. 손에 묻으면 며칠 동안 안 지워진다."
+      }
+     ]
+    },
+    {
+     "id": "letters",
+     "label": "우편함",
+     "mark": "편지",
+     "markIf": {
+      "flag": "ch4_open",
+      "noFlag": "paul_letter"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "ch4_open",
+        "noFlag": "paul_letter"
+       },
+       "steps": [
+        {
+         "give": "letter_paul",
+         "flag": "paul_letter",
+         "picture": "cu_letter_paul",
+         "text": "폴의 편지다! 이집트 원정(1798) 중에 썼다."
+        },
+        {
+         "text": "(편지) {name}에게. 여기는 이집트, 피라미드 앞이야! 나폴레옹 장군은 학자들도 데려와서 유적을 조사하고 있어.",
+         "speaker": "폴"
+        },
+        {
+         "text": "(편지) 로제타라는 곳에서 이상한 글자가 새겨진 돌도 찾았대. 장군은 이탈리아에서도 이기고 왔어. 군인들은 모두 그를 믿어.",
+         "speaker": "폴"
+        },
+        {
+         "picture": "cu_src_alps",
+         "text": "사료: 다비드 「알프스산맥을 넘는 나폴레옹」(1801). 1800년 알프스를 넘어 이탈리아로 간 일을 그렸다. 사실은 노새를 타고 맑은 날 넘었대요!"
+        },
+        {
+         "text": "영웅처럼 보이게 그린 선전 그림이지. 그림도 신문도, 누가 왜 만들었는지 생각하며 봐야 한단다.",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "flag": "press_mark",
+         "goal": "인쇄기를 조사하자 (새 일감)"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "편지와 주문서가 꽂혀 있다."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "door",
+     "label": "출입문",
+     "cases": [
+      {
+       "if": {
+        "flag": "c6"
+       },
+       "steps": [
+        {
+         "text": "이제 어디로 갈 필요는 없어. 아저씨와 이야기하자.",
+         "speaker": "{name}"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "c5"
+       },
+       "steps": [
+        {
+         "text": "── 1815년 3월, 파리."
+        },
+        {
+         "go": "paris1815",
+         "fade": "white"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "c4"
+       },
+       "steps": [
+        {
+         "text": "── 1812년 11월, 러시아. 모스크바에서 물러나는 길..."
+        },
+        {
+         "go": "russia",
+         "fade": "white"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "c3"
+       },
+       "steps": [
+        {
+         "text": "아직 할 일이 남았어. 우편함과 인쇄기를 보자.",
+         "speaker": "{name}"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "ch3_mem"
+       },
+       "steps": [
+        {
+         "text": "── 1794년 봄, 밤. 혁명 정부가 '혐의자'를 마구 잡아들이던 때..."
+        },
+        {
+         "go": "night",
+         "fade": "black"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "c2"
+       },
+       "steps": [
+        {
+         "text": "먼저 아저씨 이야기를 듣자.",
+         "speaker": "{name}"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "ch2_go"
+       },
+       "steps": [
+        {
+         "text": "── 1791년 6월 21일 밤, 파리에서 동쪽으로 250km. 바렌 근처 시골길."
+        },
+        {
+         "go": "varennes",
+         "fade": "white"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "c1"
+       },
+       "steps": [
+        {
+         "text": "먼저 아저씨 이야기를 듣자.",
+         "speaker": "{name}"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "bast_done"
+       },
+       "steps": [
+        {
+         "text": "인쇄할 게 남았어!",
+         "speaker": "{name}"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "p_done"
+       },
+       "steps": [
+        {
+         "text": "── 1789년 7월 14일 아침. 거리마다 '바스티유로!' 외치는 소리가 가득하다."
+        },
+        {
+         "go": "bastille",
+         "fade": "white"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "아직 인쇄소 일이 남았어.",
+         "speaker": "{name}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tennis",
+   "bgm": "France_Memory",
+   "name": "회상 · 1789년 6월 20일, 베르사유 테니스코트",
+   "map": 3,
+   "memory": true,
+   "tint": [
+    40,
+    14,
+    -34,
+    255
+   ],
+   "start": [
+    14,
+    11,
+    "up"
+   ],
+   "enter": [
+    {
+     "text": "(회상 장면) 비 오는 날, 실내 테니스장. 600명 가까운 대표들이 빽빽하게 모여 있다."
+    },
+    {
+     "text": "회상 장면에서는 화면이 옛날 사진처럼 보여요. 사람들에게 말을 걸어 이날 일을 알아보세요.",
+     "speaker": "안내"
+    },
+    {
+     "goal": "이날의 단서 3가지 모으기 (대표들에게 말 걸기)"
+    }
+   ],
+   "hotspots": [
+    {
+     "id": "sieyes",
+     "label": "시에예스 (성직자 출신 대표)",
+     "mark": "단서",
+     "markIf": {
+      "noFlag": "tc1"
+     },
+     "steps": [
+      {
+       "text": "삼부회에서 신분마다 한 표씩이면 성직자와 귀족이 늘 2대 1로 이긴다. 그래서 우리 제3신분은 따로 모여 '국민 의회'를 세웠소. 6월 17일이었지.",
+       "speaker": "시에예스"
+      },
+      {
+       "flag": "tc1",
+       "text": "단서 ① 제3신분 대표들은 스스로 '국민 의회'라고 선언했다."
+      },
+      {
+       "if": {
+        "flags": [
+         "tc1",
+         "tc2",
+         "tc3"
+        ]
+       },
+       "then": [
+        {
+         "goal": "탁자 위의 바이이에게 가자"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "deputy1",
+     "label": "제3신분 대표",
+     "mark": "단서",
+     "markIf": {
+      "noFlag": "tc2"
+     },
+     "steps": [
+      {
+       "text": "오늘 아침 회의장에 왔더니 문이 잠기고 병사들이 막고 있었소! 왕이 우리를 쫓아내려는 거요. 그래서 비를 맞으며 이 테니스장으로 왔지.",
+       "speaker": "제3신분 대표"
+      },
+      {
+       "flag": "tc2",
+       "text": "단서 ② 왕이 회의장을 막자, 대표들은 테니스장에 모였다."
+      },
+      {
+       "if": {
+        "flags": [
+         "tc1",
+         "tc2",
+         "tc3"
+        ]
+       },
+       "then": [
+        {
+         "goal": "탁자 위의 바이이에게 가자"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "deputy2",
+     "label": "제3신분 대표",
+     "mark": "단서",
+     "markIf": {
+      "noFlag": "tc3"
+     },
+     "steps": [
+      {
+       "text": "우리가 원하는 건 '헌법'이오. 왕 마음대로가 아니라, 법에 따라 나라를 다스리는 거요!",
+       "speaker": "제3신분 대표"
+      },
+      {
+       "flag": "tc3",
+       "text": "단서 ③ 대표들의 목표는 헌법을 만드는 것이었다."
+      },
+      {
+       "if": {
+        "flags": [
+         "tc1",
+         "tc2",
+         "tc3"
+        ]
+       },
+       "then": [
+        {
+         "goal": "탁자 위의 바이이에게 가자"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "priest",
+     "label": "성직자 대표",
+     "steps": [
+      {
+       "text": "나는 제1신분이지만, 가난한 시골 신부요. 제3신분 편에 서려고 여기 왔소.",
+       "speaker": "성직자 대표"
+      }
+     ]
+    },
+    {
+     "id": "noble",
+     "label": "귀족 대표",
+     "steps": [
+      {
+       "text": "귀족 중에도 개혁을 바라는 사람이 있다오. 나처럼.",
+       "speaker": "귀족 대표"
+      }
+     ]
+    },
+    {
+     "id": "dissenter",
+     "label": "팔짱 낀 대표",
+     "steps": [
+      {
+       "text": "나는... 서명하지 않겠소. 왕의 허락 없이 이러는 건 위험하오.",
+       "speaker": "팔짱 낀 대표"
+      },
+      {
+       "text": "(모두가 같은 생각은 아니었구나. 실제로 단 한 사람이 서명을 거부했대.)",
+       "speaker": "{name}"
+      }
+     ]
+    },
+    {
+     "id": "crowd",
+     "label": "대표들",
+     "steps": [
+      {
+       "text": "모두 오른손을 들고 탁자 쪽을 바라보고 있다."
+      }
+     ]
+    },
+    {
+     "id": "bailly",
+     "label": "바이이 (국민 의회 의장)",
+     "mark": "!",
+     "markIf": {
+      "flags": [
+       "tc1",
+       "tc2",
+       "tc3"
+      ],
+      "noFlag": "p_done"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "p_done"
+       },
+       "steps": [
+        {
+         "text": "맹세는 끝났소. 이제 헌법을 만들 차례요.",
+         "speaker": "바이이"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flags": [
+         "tc1",
+         "tc2",
+         "tc3"
+        ]
+       },
+       "steps": [
+        {
+         "text": "자, 여러분! 우리의 맹세를 읽겠소!",
+         "speaker": "바이이"
+        },
+        {
+         "choice": [
+          "헌법을 만들 때까지 결코 흩어지지 않는다",
+          "왕에게 용서를 빌고 집으로 돌아간다",
+          "모두 무기를 들고 궁전을 공격한다"
+         ],
+         "answer": 1,
+         "question": "바이이가 읽은 맹세는?",
+         "success": [
+          {
+           "effect": "flash",
+           "solve": "q_tennis",
+           "text": "\"헌법이 만들어질 때까지 결코 흩어지지 않겠다!\" 우레 같은 함성이 테니스장을 울린다."
+          },
+          {
+           "picture": "cu_src_tennis",
+           "text": "사료: 자크 루이 다비드 「테니스코트의 서약」 (밑그림, 1791년 무렵). 가운데 탁자 위에 선 사람이 바이이예요."
+          },
+          {
+           "text": "(이게 '테니스코트의 서약'이구나. 왕이 아니라 국민 대표가 나라의 법을 만들겠다는 거야!)",
+           "speaker": "{name}"
+          },
+          {
+           "flag": "p_done"
+          },
+          {
+           "goal": "아래쪽 출구로 나가 회상을 끝내자"
+          }
+         ],
+         "fail": [
+          {
+           "text": "대표들이 웅성거린다. 단서 세 가지를 다시 떠올려 보자. (다시 말을 걸면 돼요)"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "조용히! 아직 모두 모이지 않았소. 대표들 이야기를 들어 보시오.",
+         "speaker": "바이이"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "exit",
+     "label": "회상에서 돌아가기",
+     "cases": [
+      {
+       "if": {
+        "flag": "p_done"
+       },
+       "steps": [
+        {
+         "effect": "flash",
+         "text": "(회상이 끝났다.)"
+        },
+        {
+         "go": "shop",
+         "x": 14,
+         "y": 10,
+         "dir": "up",
+         "fade": "white"
+        },
+        {
+         "text": "그렇게 국민 의회가 태어났단다. 하지만 왕은 파리 둘레에 군대를 모으고 있어. 곧 무슨 일이 터질 것 같구나...",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "text": "── 그리고 1789년 7월 14일."
+        },
+        {
+         "text": "{name}!! 큰일 났어! 사람들이 무기를 찾아 바스티유로 몰려가! 같이 가자!",
+         "speaker": "폴"
+        },
+        {
+         "flag": [
+          "paul_ahead"
+         ],
+         "solve": "ch0"
+        },
+        {
+         "progressSave": true,
+         "speaker": "기록",
+         "text": "프롤로그 끝! 자동 저장했어요! 이어하기 번호: {code}   (다른 컴퓨터에서 이어 할 때 처음 화면에서 입력하세요. 마지막 번호만 적어 두면 돼요)"
+        },
+        {
+         "goal": "1장: 인쇄소 문을 나서 바스티유로!"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "아직 이날 무슨 일이 있었는지 다 모르겠어.",
+         "speaker": "{name}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bastille",
+   "bgm": "France_Battle",
+   "name": "1장 · 1789년 7월 14일, 바스티유",
+   "map": 4,
+   "camera": "follow",
+   "start": [
+    17,
+    16,
+    "up"
+   ],
+   "checkpoint": [
+    17,
+    16,
+    "up"
+   ],
+   "traps": {
+    "tiles": [
+     [
+      3,
+      11
+     ],
+     [
+      5,
+      11
+     ],
+     [
+      7,
+      11
+     ],
+     [
+      9,
+      11
+     ],
+     [
+      11,
+      11
+     ],
+     [
+      13,
+      11
+     ],
+     [
+      15,
+      11
+     ],
+     [
+      19,
+      11
+     ],
+     [
+      21,
+      11
+     ],
+     [
+      23,
+      11
+     ],
+     [
+      25,
+      11
+     ],
+     [
+      27,
+      11
+     ],
+     [
+      29,
+      11
+     ],
+     [
+      4,
+      12
+     ],
+     [
+      6,
+      12
+     ],
+     [
+      8,
+      12
+     ],
+     [
+      10,
+      12
+     ],
+     [
+      12,
+      12
+     ],
+     [
+      14,
+      12
+     ],
+     [
+      18,
+      12
+     ],
+     [
+      20,
+      12
+     ],
+     [
+      22,
+      12
+     ],
+     [
+      24,
+      12
+     ],
+     [
+      26,
+      12
+     ],
+     [
+      28,
+      12
+     ],
+     [
+      30,
+      12
+     ],
+     [
+      3,
+      13
+     ],
+     [
+      5,
+      13
+     ],
+     [
+      7,
+      13
+     ],
+     [
+      9,
+      13
+     ],
+     [
+      11,
+      13
+     ],
+     [
+      13,
+      13
+     ],
+     [
+      15,
+      13
+     ],
+     [
+      17,
+      13
+     ],
+     [
+      19,
+      13
+     ],
+     [
+      21,
+      13
+     ],
+     [
+      23,
+      13
+     ],
+     [
+      25,
+      13
+     ],
+     [
+      27,
+      13
+     ],
+     [
+      29,
+      13
+     ],
+     [
+      4,
+      14
+     ],
+     [
+      6,
+      14
+     ],
+     [
+      8,
+      14
+     ],
+     [
+      10,
+      14
+     ],
+     [
+      12,
+      14
+     ],
+     [
+      14,
+      14
+     ],
+     [
+      16,
+      14
+     ],
+     [
+      18,
+      14
+     ],
+     [
+      20,
+      14
+     ],
+     [
+      22,
+      14
+     ],
+     [
+      24,
+      14
+     ],
+     [
+      26,
+      14
+     ],
+     [
+      28,
+      14
+     ],
+     [
+      30,
+      14
+     ],
+     [
+      3,
+      15
+     ],
+     [
+      5,
+      15
+     ],
+     [
+      7,
+      15
+     ],
+     [
+      9,
+      15
+     ],
+     [
+      11,
+      15
+     ],
+     [
+      13,
+      15
+     ],
+     [
+      15,
+      15
+     ],
+     [
+      17,
+      15
+     ],
+     [
+      19,
+      15
+     ],
+     [
+      21,
+      15
+     ],
+     [
+      23,
+      15
+     ],
+     [
+      25,
+      15
+     ],
+     [
+      27,
+      15
+     ],
+     [
+      29,
+      15
+     ]
+    ],
+    "count": 9,
+    "kind": "mixed"
+   },
+   "trapsIf": {
+    "noFlag": "bast_in"
+   },
+   "movers": [
+    {
+     "event": "smoke1",
+     "route": [
+      [
+       2,
+       12
+      ],
+      [
+       31,
+       12
+      ]
+     ],
+     "speed": 3,
+     "loop": "pingpong",
+     "damage": 1,
+     "if": {
+      "noFlag": "bast_in"
+     }
+    },
+    {
+     "event": "smoke2",
+     "route": [
+      [
+       31,
+       14
+      ],
+      [
+       2,
+       14
+      ]
+     ],
+     "speed": 4,
+     "loop": "pingpong",
+     "damage": 1,
+     "if": {
+      "noFlag": "bast_in"
+     }
+    }
+   ],
+   "ko": [
+    {
+     "text": "콜록콜록... 연기와 무너지는 돌을 조심하자! 다시!",
+     "speaker": "{name}"
+    }
+   ],
+   "enter": [
+    {
+     "text": "탕! 탕! 총소리와 함성. 해자 너머로 바스티유의 거대한 탑 여덟 개가 솟아 있다."
+    },
+    {
+     "text": "{name}! 여기야! 사람들이 앵발리드에서 총은 구했는데 화약이 없대. 화약은 저 바스티유에 있어!",
+     "speaker": "폴"
+    },
+    {
+     "text": "연기가 오가고, 성벽에서 돌이 떨어지는 곳(바닥 그림자)이 있어. 조심해서 도개교까지 가자!",
+     "speaker": "폴"
+    },
+    {
+     "goal": "연기와 떨어지는 돌을 피해 도개교 너머 성문으로!"
+    }
+   ],
+   "hotspots": [
+    {
+     "id": "paul",
+     "label": "폴",
+     "steps": [
+      {
+       "text": "앞치마 꼭 매! 그리고 하트가 다 떨어지면 여기서 다시 시작이야.",
+       "speaker": "폴"
+      }
+     ]
+    },
+    {
+     "id": "crowd1",
+     "label": "상퀼로트",
+     "steps": [
+      {
+       "text": "우리는 귀족처럼 비단 반바지(퀼로트)가 아니라 긴 바지를 입어. 그래서 '상퀼로트'라고 불리지!",
+       "speaker": "상퀼로트"
+      }
+     ]
+    },
+    {
+     "id": "crowd2",
+     "label": "시장 아주머니",
+     "steps": [
+      {
+       "text": "왕이 개혁파 장관 네케르를 쫓아냈대! 군대로 파리를 짓누르려는 거야!",
+       "speaker": "아주머니"
+      }
+     ]
+    },
+    {
+     "id": "crowd3",
+     "label": "시민",
+     "steps": [
+      {
+       "text": "총은 앵발리드(군 병원)에서 3만 정이나 가져왔어. 화약만 있으면 돼!",
+       "speaker": "시민"
+      }
+     ]
+    },
+    {
+     "id": "guard_fr",
+     "label": "프랑스 수비대 병사",
+     "steps": [
+      {
+       "text": "우리 수비대 병사들도 시민 편에 섰다! 대포를 끌고 왔지!",
+       "speaker": "수비대 병사"
+      }
+     ]
+    },
+    {
+     "id": "smoke1",
+     "label": "포연",
+     "steps": [
+      {
+       "text": "매캐한 연기."
+      }
+     ]
+    },
+    {
+     "id": "smoke2",
+     "label": "포연",
+     "steps": [
+      {
+       "text": "매캐한 연기."
+      }
+     ]
+    },
+    {
+     "id": "gate_in",
+     "label": "바스티유 성문",
+     "cases": [
+      {
+       "if": {
+        "flag": "bast_in"
+       },
+       "steps": [
+        {
+         "text": "열린 성문. 안뜰로 이어진다."
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "flag": "bast_in",
+         "effect": "shake",
+         "text": "쿠웅! 오후 5시 무렵, 마침내 수비대장이 항복하고 도개교가 내려왔다!"
+        },
+        {
+         "text": "사람들이 함성을 지르며 안뜰로 쏟아져 들어간다."
+        },
+        {
+         "go": "bastille",
+         "x": 16,
+         "y": 6,
+         "dir": "up",
+         "fade": "black"
+        },
+        {
+         "text": "들어왔다! 감방부터 열어 주자. 갇힌 사람이 몇 명인지 세어 봐. 명부와 맞춰 봐야 해!",
+         "speaker": "폴"
+        },
+        {
+         "goal": "감방 세 곳을 살펴 갇힌 사람 수를 세자"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "invalide",
+     "label": "늙은 수비병 (상이군인)",
+     "steps": [
+      {
+       "text": "나는 다친 군인들로 꾸린 수비대였네. 싸울 마음도 없었어... 지하 창고 쪽 벽에 금이 갔으니 조심하게.",
+       "speaker": "늙은 수비병"
+      }
+     ]
+    },
+    {
+     "id": "cell1",
+     "label": "감방 (왼쪽)",
+     "steps": [
+      {
+       "flag": "cl1",
+       "text": "감방 안에 화폐 위조범 4명이 있다. \"고맙소! 드디어 나가는구려!\""
+      }
+     ]
+    },
+    {
+     "id": "cell2",
+     "label": "감방 (가운데)",
+     "steps": [
+      {
+       "flag": "cl2",
+       "text": "감방 안에 정신이 온전치 않은 사람 2명이 있다. 가족이 가둬 달라고 했다고 한다."
+      }
+     ]
+    },
+    {
+     "id": "cell3",
+     "label": "감방 (오른쪽)",
+     "steps": [
+      {
+       "flag": "cl3",
+       "text": "감방 안에 귀족 1명이 있다. 집안의 부탁으로 왕의 명령서(봉인장) 한 장에 갇혔다고 한다."
+      }
+     ]
+    },
+    {
+     "id": "register",
+     "label": "수비대 상자",
+     "mark": "명부",
+     "markIf": {
+      "flags": [
+       "cl1",
+       "cl2",
+       "cl3"
+      ],
+      "noFlag": "q_cells"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "q_cells"
+       },
+       "steps": [
+        {
+         "text": "빈 상자."
+        }
+       ]
+      },
+      {
+       "if": {
+        "flags": [
+         "cl1",
+         "cl2",
+         "cl3"
+        ]
+       },
+       "steps": [
+        {
+         "text": "상자 자물쇠에 '오늘 수감자 수'를 넣으라고 적혀 있다."
+        },
+        {
+         "lock": {
+          "digits": 1,
+          "answer": "7",
+          "question": "오늘 바스티유에 갇혀 있던 사람은 모두 몇 명?"
+         },
+         "success": [
+          {
+           "solve": "q_cells",
+           "give": "register",
+           "effect": "sparkle",
+           "target": "register",
+           "text": "딸깍! 수감자 명부가 나왔다. 정말로 7명뿐이었다."
+          },
+          {
+           "text": "겨우 7명? 무시무시한 감옥이라더니... 그럼 사람들은 왜 이곳을 공격한 거지?",
+           "speaker": "폴"
+          },
+          {
+           "choice": [
+            "화약과 무기를 얻으려고",
+            "왕을 잡으려고",
+            "숨겨진 금화를 찾으려고"
+           ],
+           "answer": 1,
+           "question": "시민들이 바스티유를 공격한 가장 큰 까닭은?",
+           "success": [
+            {
+             "solve": "q_why",
+             "text": "맞아. 앵발리드에서 구한 총에 쓸 화약이 바스티유에 있었다. 그리고 바스티유는 왕의 '마음대로 가두는 힘'의 상징이었다."
+            },
+            {
+             "text": "저기 금 간 벽 너머가 화약 창고래! 확인하러 가자.",
+             "speaker": "폴"
+            },
+            {
+             "goal": "안뜰 오른쪽 위의 금 간 벽을 조사하자"
+            }
+           ],
+           "fail": [
+            {
+             "text": "음... 엔발리드에서 총은 구했는데 뭐가 없다고 했지? 상자를 다시 조사해 보자.",
+             "speaker": "폴"
+            }
+           ]
+          }
+         ],
+         "fail": [
+          {
+           "text": "세 감방을 다시 세어 보자. 4명, 2명, 그리고...?",
+           "speaker": "폴"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "잠긴 상자. 먼저 감방 세 곳을 모두 살펴보자."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "crack",
+     "label": "금 간 벽",
+     "mark": "?",
+     "markIf": {
+      "flag": "q_why",
+      "noFlag": "cellar_done"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "cellar_done"
+       },
+       "steps": [
+        {
+         "text": "무너진 벽 틈. 창고는 이미 살펴보았다."
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "q_why"
+       },
+       "steps": [
+        {
+         "text": "벽돌을 밀자 와르르 무너지며 어두운 계단이 나타났다."
+        },
+        {
+         "go": "cellar",
+         "fade": "black"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "벽에 금이 쩍 가 있다."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "to_shop",
+     "label": "인쇄소로",
+     "cases": [
+      {
+       "if": {
+        "flag": "cellar_done"
+       },
+       "steps": [
+        {
+         "flag": "bast_done"
+        },
+        {
+         "text": "저녁, 바스티유 꼭대기에서 사람들이 돌을 하나씩 뜯어내기 시작했다. 왕의 요새가 무너진다."
+        },
+        {
+         "go": "shop",
+         "x": 14,
+         "y": 10,
+         "dir": "up",
+         "fade": "black"
+        },
+        {
+         "text": "무사했구나! 바스티유가 함락되다니... 이 소식은 온 프랑스로 퍼질 거다.",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "text": "시골에서도 농민들이 들고일어났대. 8월 4일, 국민 의회는 '봉건적 특권을 없앤다'고 선언했지. 영주에게 바치던 공납, 교회 십일조가 사라진 거야!",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "flag": "press_mark",
+         "goal": "인쇄기를 조사하자 (인권 선언 인쇄)"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "아직 돌아갈 수 없어. 바스티유 안을 확인해야 해!",
+         "speaker": "{name}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cellar",
+   "bgm": "France_Danger",
+   "name": "1장 · 바스티유 화약 창고",
+   "map": 5,
+   "dark": 3,
+   "start": [
+    20,
+    11,
+    "left"
+   ],
+   "enter": [
+    {
+     "text": "눅눅하고 캄캄한 지하 창고. 앞이 거의 보이지 않는다."
+    },
+    {
+     "goal": "어둠 속에서 창고를 살펴보자"
+    }
+   ],
+   "hotspots": [
+    {
+     "id": "barrels",
+     "label": "화약 통",
+     "mark": "화약",
+     "markIf": {
+      "noFlag": "powder"
+     },
+     "steps": [
+      {
+       "flag": "powder",
+       "text": "화약 통이 산더미처럼 쌓여 있다! 250통쯤 된다. 시민들이 찾던 바로 그것이다."
+      },
+      {
+       "if": {
+        "flag": "enl"
+       },
+       "then": [
+        {
+         "goal": "사다리로 올라가 인쇄소로 돌아가자"
+        }
+       ],
+       "else": [
+        {
+         "goal": "창고 안쪽 작은 상자도 살펴보자"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "box",
+     "label": "봉인된 작은 상자",
+     "mark": "?",
+     "markIf": {
+      "noFlag": "enl"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "enl"
+       },
+       "steps": [
+        {
+         "text": "빈 상자."
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "'압수품 - 금서'라고 찍힌 상자다. 안에 책과 인쇄판이 들어 있다."
+        },
+        {
+         "give": "treasure_enlight",
+         "flag": "enl",
+         "picture": "cu_treasure_enlight",
+         "text": "★ 사료 카드 '바스티유의 금서'를 얻었다! 왕을 비판했다고 압수된 계몽사상 책들이다."
+        },
+        {
+         "text": "로크, 몽테스키외, 루소... '왕의 힘은 국민에게서 나온다', '권력은 나눠야 한다'. 이 생각들이 혁명의 씨앗이 됐구나.",
+         "speaker": "{name}"
+        },
+        {
+         "if": {
+          "flag": "powder"
+         },
+         "then": [
+          {
+           "goal": "사다리로 올라가 인쇄소로 돌아가자"
+          }
+         ],
+         "else": [
+          {
+           "goal": "화약 통도 확인하자"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "flyer",
+     "label": "구겨진 종이",
+     "visible": {
+      "noItem": "flyer2"
+     },
+     "steps": [
+      {
+       "give": "flyer2",
+       "effect": "sparkle",
+       "target": "flyer",
+       "text": "상자 뒤에서 숨은 전단지 ② '바스티유의 열쇠'을(를) 찾았다!"
+      },
+      {
+       "picture": "cu_flyer2",
+       "text": "가방의 '전단지'에서 다시 볼 수 있다. 전단지 6장을 모두 모으면 마지막에 특별한 일이 생긴다는데..."
+      },
+      {
+       "if": {
+        "items": [
+         "flyer1",
+         "flyer2",
+         "flyer3",
+         "flyer4",
+         "flyer5",
+         "flyer6"
+        ]
+       },
+       "then": [
+        {
+         "flag": "all_flyers",
+         "text": "전단지 6장을 모두 모았다! 마지막 호외에 실을 수 있겠다."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "ladder",
+     "label": "사다리",
+     "cases": [
+      {
+       "if": {
+        "flags": [
+         "powder",
+         "enl"
+        ]
+       },
+       "steps": [
+        {
+         "flag": "cellar_done"
+        },
+        {
+         "go": "bastille",
+         "x": 1,
+         "y": 14,
+         "dir": "left",
+         "fade": "black"
+        },
+        {
+         "text": "화약도 찾고, 감방도 열었어! 이제 아저씨한테 알리자. 왼쪽 길로 가면 인쇄소야.",
+         "speaker": "폴"
+        },
+        {
+         "goal": "왼쪽 끝 길로 인쇄소에 돌아가자"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "창고를 다 살펴보고 올라가자.",
+         "speaker": "{name}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "varennes",
+   "bgm": "France_Chase",
+   "name": "2장 · 1791년 6월 21일, 바렌 가는 길",
+   "map": 6,
+   "camera": "follow",
+   "start": [
+    2,
+    6,
+    "right"
+   ],
+   "checkpoint": [
+    2,
+    6,
+    "right"
+   ],
+   "movers": [
+    {
+     "event": "sheep1",
+     "route": [
+      [
+       22,
+       4
+      ],
+      [
+       22,
+       8
+      ]
+     ],
+     "speed": 3,
+     "loop": "pingpong",
+     "damage": 1,
+     "if": {
+      "noFlag": "caught"
+     }
+    },
+    {
+     "event": "sheep2",
+     "route": [
+      [
+       30,
+       8
+      ],
+      [
+       30,
+       4
+      ]
+     ],
+     "speed": 3,
+     "loop": "pingpong",
+     "damage": 1,
+     "if": {
+      "noFlag": "caught"
+     }
+    },
+    {
+     "event": "sheep3",
+     "route": [
+      [
+       38,
+       4
+      ],
+      [
+       38,
+       8
+      ]
+     ],
+     "speed": 4,
+     "loop": "pingpong",
+     "damage": 1,
+     "if": {
+      "noFlag": "caught"
+     }
+    },
+    {
+     "event": "haycart",
+     "route": [
+      [
+       44,
+       4
+      ],
+      [
+       44,
+       8
+      ]
+     ],
+     "speed": 3,
+     "loop": "pingpong",
+     "damage": 1,
+     "if": {
+      "noFlag": "caught"
+     }
+    }
+   ],
+   "ko": [
+    {
+     "text": "양 떼에 치였다... 다시 마차를 쫓자!",
+     "speaker": "{name}"
+    }
+   ],
+   "enter": [
+    {
+     "text": "밤길에 크고 무거운 마차 한 대가 덜컹덜컹 동쪽으로 달려간다. 마차 문에 문장을 가린 천이 덮여 있다."
+    },
+    {
+     "text": "저 마차다! 역참장 드루에 씨가 바렌 마을에서 길을 막기로 했대. 그 전에 마차를 따라잡아 마을로 몰아야 해!",
+     "speaker": "{name}"
+    },
+    {
+     "text": "마차를 따라가 붙으세요(닿으면 성공). 양 떼와 건초 수레에 부딪히면 하트가 줄어요.",
+     "speaker": "안내"
+    },
+    {
+     "goal": "도망치는 마차를 따라잡자!"
+    },
+    {
+     "chase": {
+      "targets": [
+       "coach"
+      ],
+      "time": 75,
+      "speed": 3,
+      "sight": 6,
+      "smart": 0.6,
+      "pause": 0.12,
+      "success": [
+       {
+        "flag": "caught",
+        "effect": "flash",
+        "text": "따라잡았다! 마부가 놀라 고삐를 당기고, 마차는 바렌 마을 앞에 멈춰 섰다."
+       },
+       {
+        "go": "varennes",
+        "x": 48,
+        "y": 6,
+        "dir": "right",
+        "fade": "black"
+       },
+       {
+        "text": "여기다! 길을 막았다! 승객들은 모두 내리시오!",
+        "speaker": "드루에"
+       },
+       {
+        "text": "손님 다섯이 마차에서 내렸다. 모두 평범한 여행자라고 우긴다."
+       },
+       {
+        "goal": "드루에에게 말을 걸어 '왕을 알아보는 법'을 듣자"
+       }
+      ],
+      "fail": [
+       {
+        "text": "마차가 어둠 속으로 멀어졌다... 하지만 바렌에서 막힐 테니 다시 쫓아가 보자!"
+       },
+       {
+        "go": "varennes",
+        "x": 2,
+        "y": 6,
+        "dir": "right",
+        "fade": "black"
+       },
+       {
+        "goal": "마을로 가는 마차를 다시 쫓자 (길 위의 마차에 말 걸기)"
+       }
+      ]
+     }
+    }
+   ],
+   "hotspots": [
+    {
+     "id": "coach",
+     "label": "수상한 마차",
+     "visible": {
+      "noFlag": "caught"
+     },
+     "steps": [
+      {
+       "text": "잡아야 해!",
+       "speaker": "{name}"
+      },
+      {
+       "chase": {
+        "targets": [
+         "coach"
+        ],
+        "time": 75,
+        "speed": 3,
+        "sight": 6,
+        "smart": 0.6,
+        "pause": 0.15,
+        "success": [
+         {
+          "flag": "caught",
+          "effect": "flash",
+          "text": "따라잡았다! 마차는 바렌 마을 앞에 멈춰 섰다."
+         },
+         {
+          "go": "varennes",
+          "x": 48,
+          "y": 6,
+          "dir": "right",
+          "fade": "black"
+         },
+         {
+          "text": "여기다! 길을 막았다! 승객들은 모두 내리시오!",
+          "speaker": "드루에"
+         },
+         {
+          "goal": "드루에에게 말을 걸어 '왕을 알아보는 법'을 듣자"
+         }
+        ],
+        "fail": [
+         {
+          "text": "놓쳤다! 마차에 다시 말을 걸어 쫓아가자."
+         }
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "id": "sheep1",
+     "label": "양",
+     "steps": [
+      {
+       "text": "메에~"
+      }
+     ]
+    },
+    {
+     "id": "sheep2",
+     "label": "양",
+     "steps": [
+      {
+       "text": "메에에~"
+      }
+     ]
+    },
+    {
+     "id": "sheep3",
+     "label": "양",
+     "steps": [
+      {
+       "text": "메~"
+      }
+     ]
+    },
+    {
+     "id": "haycart",
+     "label": "건초 수레",
+     "steps": [
+      {
+       "text": "밤늦게 건초를 나르는 농부의 수레."
+      }
+     ]
+    },
+    {
+     "id": "drouet",
+     "label": "드루에 (생트므누 역참장)",
+     "mark": "!",
+     "markIf": {
+      "flag": "caught",
+      "noItem": "assignat"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "q_king"
+       },
+       "steps": [
+        {
+         "text": "국민의 이름으로 왕을 파리로 모셔 가겠소.",
+         "speaker": "드루에"
+        }
+       ]
+      },
+      {
+       "if": {
+        "item": "assignat"
+       },
+       "steps": [
+        {
+         "text": "다섯 사람을 하나씩 살펴보시오. 지폐 속 옆얼굴, 그리고 '손'을 보시오!",
+         "speaker": "드루에"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "caught"
+       },
+       "steps": [
+        {
+         "text": "나는 역참에서 이 마차가 말을 바꿀 때 안을 들여다봤소. 그런데 그 얼굴... 어디서 봤나 했더니!",
+         "speaker": "드루에"
+        },
+        {
+         "give": "assignat",
+         "picture": "cu_assignat",
+         "effect": "sparkle",
+         "target": "drouet",
+         "text": "드루에가 아시냐 지폐를 건넸다. 지폐에 루이 16세의 옆얼굴이 찍혀 있다!"
+        },
+        {
+         "text": "왕은 키가 크고 몸집이 큰 편이오. 하인 옷을 입었어도 평생 일해 본 적 없는 손은 못 숨기지.",
+         "speaker": "드루에"
+        },
+        {
+         "goal": "승객 다섯 명을 살펴보고 누가 왕인지 알아내자"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "마차를 마을 쪽으로 몰아 주시오! 내가 길을 막겠소!",
+         "speaker": "드루에"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "innkeeper",
+     "label": "여관 주인 (소스 씨)",
+     "steps": [
+      {
+       "text": "마을 사람들이 종을 치고 다리를 수레로 막았소. 이 밤에 웬 소동이람!",
+       "speaker": "여관 주인"
+      }
+     ]
+    },
+    {
+     "id": "p1",
+     "label": "승객 (마부?)",
+     "visible": {
+      "flag": "caught"
+     },
+     "steps": [
+      {
+       "flag": "s1",
+       "text": "손에 굳은살이 박인 하인. \"저는 마부랍니다.\""
+      }
+     ]
+    },
+    {
+     "id": "p2",
+     "label": "승객 (하인?)",
+     "visible": {
+      "flag": "caught"
+     },
+     "steps": [
+      {
+       "flag": "s2",
+       "text": "하인 옷을 입었지만 손이 하얗고 고운 남자. 키가 크고 배가 나왔다. 조끼에 금 시곗줄이 반짝인다."
+      }
+     ]
+    },
+    {
+     "id": "p3",
+     "label": "승객 (가정 교사?)",
+     "visible": {
+      "flag": "caught"
+     },
+     "steps": [
+      {
+       "flag": "s3",
+       "text": "가정 교사라는 여자. \"아이들을 데리고 가는 길이에요.\""
+      }
+     ]
+    },
+    {
+     "id": "p4",
+     "label": "승객 (아주머니?)",
+     "visible": {
+      "flag": "caught"
+     },
+     "steps": [
+      {
+       "flag": "s4",
+       "text": "시골 아주머니. 바구니에 달걀이 있다."
+      }
+     ]
+    },
+    {
+     "id": "p5",
+     "label": "승객 (장사꾼?)",
+     "visible": {
+      "flag": "caught"
+     },
+     "steps": [
+      {
+       "flag": "s5",
+       "text": "장사꾼. \"나는 포도주를 사러 가오.\""
+      }
+     ]
+    },
+    {
+     "id": "village_gate",
+     "label": "바렌 마을 입구 (차단봉)",
+     "mark": "!",
+     "markIf": {
+      "item": "assignat",
+      "noFlag": "q_king"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "q_king"
+       },
+       "steps": [
+        {
+         "text": "왕 일행은 국민 방위대에 둘러싸여 파리로 되돌아갔다. 길가의 사람들은 모자도 벗지 않고 말없이 지켜보았다."
+        },
+        {
+         "choice": [
+          "인쇄소로 돌아간다",
+          "조금 더 둘러본다"
+         ],
+         "question": "어떻게 할까?",
+         "on1": [
+          {
+           "go": "shop",
+           "x": 14,
+           "y": 10,
+           "dir": "up",
+           "fade": "black"
+          },
+          {
+           "text": "왕이 국민을 버리고 도망치려 했다니! 이제 누가 왕을 믿겠니.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "flag": "ch2_print",
+           "goal": "벽보판을 조사하자 (1791~1792년)"
+          }
+         ],
+         "on2": [
+          {
+           "if": {
+            "noItem": "flyer3"
+           },
+           "then": [
+            {
+             "text": "마구간 쪽에 뭔가 떨어져 있었던 것 같은데... (숨은 전단지가 있을지도!)",
+             "speaker": "{name}"
+            }
+           ]
+          },
+          {
+           "goal": "다 둘러봤으면 마을 입구를 다시 조사하자"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "if": {
+        "item": "assignat"
+       },
+       "steps": [
+        {
+         "if": {
+          "flags": [
+           "s1",
+           "s2",
+           "s3",
+           "s4",
+           "s5"
+          ]
+         },
+         "then": [
+          {
+           "choice": [
+            "마부라는 남자",
+            "하인 옷의 키 큰 남자",
+            "가정 교사라는 여자",
+            "시골 아주머니",
+            "장사꾼"
+           ],
+           "answer": 2,
+           "question": "이 사람들 중 누가 루이 16세일까?",
+           "success": [
+            {
+             "solve": "q_king",
+             "effect": "flash",
+             "text": "\"폐하...!\" 하인 옷의 남자가 고개를 떨구었다. \"그렇소. 내가 왕이오.\""
+            },
+            {
+             "text": "1791년 6월 21일, 국경 근처 바렌에서 루이 16세 가족이 붙잡혔다. 가정 교사로 꾸민 사람은 왕의 아이들 보모였다."
+            },
+            {
+             "text": "왕이 국민을 버리고 외국으로 도망치려 했어... 이 일로 왕에 대한 믿음이 무너졌대.",
+             "speaker": "{name}"
+            },
+            {
+             "goal": "마을 입구를 다시 조사해 인쇄소로 돌아가자"
+            }
+           ],
+           "fail": [
+            {
+             "text": "\"사람 잘못 봤소!\" 드루에가 고개를 젓는다. 지폐 속 얼굴과 '손'을 떠올려 보자. 다시 마을 입구를 조사하자.",
+             "speaker": "드루에"
+            }
+           ]
+          }
+         ],
+         "else": [
+          {
+           "text": "먼저 승객 다섯 명을 모두 살펴보자.",
+           "speaker": "{name}"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "먼저 마차를 따라잡자!",
+         "speaker": "{name}"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "hay",
+     "label": "구겨진 종이",
+     "visible": {
+      "noItem": "flyer3"
+     },
+     "steps": [
+      {
+       "give": "flyer3",
+       "effect": "sparkle",
+       "target": "hay",
+       "text": "마구간 건초 더미 속에서 숨은 전단지 ③ '왕이 도망쳤다!'을(를) 찾았다!"
+      },
+      {
+       "picture": "cu_flyer3",
+       "text": "가방의 '전단지'에서 다시 볼 수 있다. 전단지 6장을 모두 모으면 마지막에 특별한 일이 생긴다는데..."
+      },
+      {
+       "if": {
+        "items": [
+         "flyer1",
+         "flyer2",
+         "flyer3",
+         "flyer4",
+         "flyer5",
+         "flyer6"
+        ]
+       },
+       "then": [
+        {
+         "flag": "all_flyers",
+         "text": "전단지 6장을 모두 모았다! 마지막 호외에 실을 수 있겠다."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "execution",
+   "bgm": "France_Memory",
+   "name": "회상 · 1793년 1월 21일, 혁명 광장",
+   "map": 8,
+   "memory": true,
+   "tint": [
+    40,
+    14,
+    -34,
+    255
+   ],
+   "start": [
+    14,
+    11,
+    "up"
+   ],
+   "enter": [
+    {
+     "text": "(회상 장면) 차가운 아침, 광장을 가득 메운 사람들. 북소리가 울린다."
+    },
+    {
+     "goal": "광장의 사람들 이야기를 듣자 (지롱드파 · 자코뱅파)"
+    }
+   ],
+   "hotspots": [
+    {
+     "id": "girondin",
+     "label": "지롱드파 의원",
+     "mark": "?",
+     "markIf": {
+      "noFlag": "ex1"
+     },
+     "steps": [
+      {
+       "text": "나는 지롱드파요. 왕은 잘못했지만, 처형까지는 지나치오. 혁명은 이만하면 됐소. 지방의 상공업자들도 우리 편이오.",
+       "speaker": "지롱드파 의원"
+      },
+      {
+       "flag": "ex1"
+      }
+     ]
+    },
+    {
+     "id": "jacobin",
+     "label": "로베스피에르 (자코뱅파)",
+     "mark": "?",
+     "markIf": {
+      "noFlag": "ex2"
+     },
+     "steps": [
+      {
+       "text": "왕이 살아 있는 한 공화국은 위험하오! 파리의 상퀼로트와 함께 혁명을 끝까지 밀고 나가야 하오.",
+       "speaker": "로베스피에르"
+      },
+      {
+       "flag": "ex2"
+      }
+     ]
+    },
+    {
+     "id": "woman",
+     "label": "시장 아주머니",
+     "steps": [
+      {
+       "text": "공화국이 되면 빵값이 내릴까? 전쟁 때문에 더 오르기만 하는데...",
+       "speaker": "아주머니"
+      }
+     ]
+    },
+    {
+     "id": "sansculotte",
+     "label": "상퀼로트",
+     "steps": [
+      {
+       "text": "이제 왕은 없다! '시민 루이 카페'일 뿐이야!",
+       "speaker": "상퀼로트"
+      }
+     ]
+    },
+    {
+     "id": "drummer",
+     "label": "북 치는 병사",
+     "steps": [
+      {
+       "text": "둥, 둥, 둥... 북소리가 마지막 말을 덮어 버린다."
+      }
+     ]
+    },
+    {
+     "id": "scaffold",
+     "label": "단두대 처형대",
+     "steps": [
+      {
+       "text": "처형대 위에 단두대가 서 있다. 1793년 1월 21일, 루이 16세가 이곳에서 처형되었다."
+      },
+      {
+       "text": "(마음이 무겁다. 왕을 처형한 일은 유럽 여러 나라 왕들을 크게 놀라게 했대.)",
+       "speaker": "{name}"
+      }
+     ]
+    },
+    {
+     "id": "exit",
+     "label": "회상에서 돌아가기",
+     "cases": [
+      {
+       "if": {
+        "flags": [
+         "ex1",
+         "ex2"
+        ]
+       },
+       "steps": [
+        {
+         "choice": [
+          "자코뱅파",
+          "지롱드파"
+         ],
+         "answer": 1,
+         "question": "왕의 처형을 강하게 주장하고, 뒤에 권력을 잡은 쪽은?",
+         "success": [
+          {
+           "solve": "q_parties",
+           "effect": "flash",
+           "text": "(회상이 끝났다.)"
+          },
+          {
+           "go": "shop",
+           "x": 14,
+           "y": 10,
+           "dir": "up",
+           "fade": "white"
+          },
+          {
+           "text": "그래, 자코뱅파는 1793년 지롱드파를 몰아내고 '공안 위원회'로 권력을 잡았지. 그리고 로베스피에르는...",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "text": "'혁명의 적'을 없앤다며 혐의만 있어도 잡아들였어. 1년 남짓 동안 수만 명이 붙잡히고, 수천 명이 처형되었지. 이것을 '공포 정치'라 한단다.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "text": "물론 그때 가난한 사람들을 위해 빵값 최고 가격을 정하고, 남자 모두에게 투표권을 주는 헌법도 만들었지만... 무서운 시절이었다.",
+           "speaker": "뒤부아 아저씨"
+          },
+          {
+           "goal": "인쇄소 문을 나서 밤의 파리로 (1794년)"
+          }
+         ],
+         "fail": [
+          {
+           "text": "다시 두 사람의 말을 떠올려 보자. 처형까지는 지나치다고 한 쪽은 지롱드파였다. (출구를 다시 조사)"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "두 의원의 이야기를 모두 들어 보자.",
+         "speaker": "{name}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "night",
+   "bgm": "France_Night",
+   "name": "3장 · 1794년 봄, 공포 정치의 밤",
+   "map": 7,
+   "camera": "follow",
+   "tint": [
+    -20,
+    -22,
+    0,
+    20
+   ],
+   "start": [
+    1,
+    10,
+    "right"
+   ],
+   "checkpoint": [
+    1,
+    10,
+    "right"
+   ],
+   "watchers": [
+    {
+     "event": "patrol1",
+     "route": [
+      [
+       12,
+       9
+      ],
+      [
+       12,
+       11
+      ]
+     ],
+     "sight": 2,
+     "speed": 3,
+     "wait": 70
+    },
+    {
+     "event": "patrol3",
+     "route": [
+      [
+       26,
+       17
+      ],
+      [
+       33,
+       17
+      ]
+     ],
+     "sight": 2,
+     "speed": 3,
+     "wait": 80
+    },
+    {
+     "event": "patrol4",
+     "route": [
+      [
+       34,
+       4
+      ],
+      [
+       34,
+       8
+      ]
+     ],
+     "sight": 2,
+     "speed": 3,
+     "wait": 90
+    }
+   ],
+   "watchIf": {
+    "flag": "clair_follow"
+   },
+   "caught": [
+    {
+     "text": "거기 서라! 이 밤에 어디 가나? ...통행증이 있나 보자!",
+     "speaker": "순찰대"
+    },
+    {
+     "text": "들켰다! 순찰대가 등을 돌렸을 때 다시 가자. (빨간 칸은 순찰대가 보는 곳)",
+     "speaker": "{name}"
+    }
+   ],
+   "enter": [
+    {
+     "text": "가로등 불빛만 깜박이는 밤거리. 벽마다 '혐의자 명단'이 붙어 있다."
+    },
+    {
+     "text": "요즘은 '혁명의 적 같다'는 말 한마디로도 잡혀가. 그런데... 클레르는 괜찮을까? 귀족 집안인데.",
+     "speaker": "{name}"
+    },
+    {
+     "goal": "혁명 감시위원회 벽보를 읽고, 클레르를 찾자"
+    }
+   ],
+   "hotspots": [
+    {
+     "id": "notice",
+     "label": "감시위원회 벽보",
+     "steps": [
+      {
+       "picture": "cu_suspects",
+       "flag": "law_read",
+       "text": "벽보: 「혐의자법」(1793. 9.) 귀족, 망명자의 가족, 혁명에 반대하는 말을 한 자는 모두 '혐의자'로 붙잡는다."
+      },
+      {
+       "text": "증거가 없어도 '혐의'만으로... 클레르 같은 아이까지 잡혀갈지도 몰라.",
+       "speaker": "{name}"
+      }
+     ]
+    },
+    {
+     "id": "committee",
+     "label": "감시위원회 위원",
+     "cases": [
+      {
+       "if": {
+        "flag": "q_evidence"
+       },
+       "steps": [
+        {
+         "text": "흠, 뒤부아라는 자는 무혐의로 처리하지.",
+         "speaker": "위원"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "인쇄소 견습생이로군. 마침 잘 왔다. 너희 주인 뒤부아를 고발하는 편지가 셋 들어왔다.",
+         "speaker": "위원"
+        },
+        {
+         "picture": "cu_accuse",
+         "text": "고발장 세 장. 하나만 '증거'가 있는 이야기이고, 나머지는 소문이다."
+        },
+        {
+         "choice": [
+          "\"뒤부아는 왕당파 같은 얼굴이다\"",
+          "\"뒤부아가 몰래 귀족과 만나는 걸 누가 봤다더라\"",
+          "\"뒤부아 인쇄소 장부에 왕당파 소책자 주문이 한 건도 없다\" (장부 첨부)"
+         ],
+         "answer": 3,
+         "question": "어느 것이 '증거'가 있는 이야기일까? (그것을 위원에게 보여 주자)",
+         "success": [
+          {
+           "solve": "q_evidence",
+           "effect": "sparkle",
+           "target": "committee",
+           "text": "장부를 내밀자 위원이 고개를 끄덕였다. \"증거가 분명하군. 뒤부아는 무혐의다.\""
+          },
+          {
+           "text": "휴... 소문만으로 사람을 잡아가던 때였어. 증거와 소문을 가려내는 게 이렇게 중요하구나.",
+           "speaker": "{name}"
+          },
+          {
+           "if": {
+            "flag": "clair_decided"
+           },
+           "then": [],
+           "else": [
+            {
+             "goal": "클레르를 찾자 (거리 아래쪽 골목)"
+            }
+           ]
+          }
+         ],
+         "fail": [
+          {
+           "text": "그건 '누가 그랬다더라'일 뿐이잖아? 증거가 아니다. 다시 생각해 보거라.",
+           "speaker": "위원"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "clair",
+     "label": "클레르",
+     "follow": {
+      "flag": "clair_follow"
+     },
+     "visible": {
+      "noFlag": "clair_gone"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "clair_follow"
+       },
+       "steps": [
+        {
+         "text": "조용히... 관문까지만 가면 돼요. 마차가 기다리고 있어요.",
+         "speaker": "클레르"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "{name}! 다행이다... 아버지가 어젯밤 붙잡혀 가셨어요. 나도 명단에 올랐대요.",
+         "speaker": "클레르"
+        },
+        {
+         "text": "이모가 사는 시골로 가는 마차가 동쪽 관문에서 기다려요. 하지만 혼자서는 순찰대를 지날 수가 없어요. 도와줄 수 있어요?",
+         "speaker": "클레르"
+        },
+        {
+         "choice": [
+          "돕는다 (관문까지 데려다준다)",
+          "돕지 않는다 (너무 위험하다)"
+         ],
+         "question": "어떻게 할까? (어느 쪽을 골라도 이야기는 이어져요)",
+         "on1": [
+          {
+           "flag": [
+            "clair_follow",
+            "clair_decided"
+           ]
+          },
+          {
+           "give": "pass",
+           "text": "뒤부아 아저씨가 몰래 찍어 준 빈 통행증이 앞치마 주머니에 있다. 이걸 쓰자!"
+          },
+          {
+           "text": "좋아, 따라와. 순찰대 시야(빨간 칸)를 피해서 가자.",
+           "speaker": "{name}"
+          },
+          {
+           "goal": "클레르와 함께 순찰대를 피해 동쪽 관문의 마차까지!"
+          }
+         ],
+         "on2": [
+          {
+           "flag": [
+            "clair_refused",
+            "clair_decided",
+            "clair_gone"
+           ]
+          },
+          {
+           "text": "...알겠어요. 혼자 가 볼게요. 고마웠어요, {name}.",
+           "speaker": "클레르"
+          },
+          {
+           "text": "클레르가 어둠 속으로 사라졌다."
+          },
+          {
+           "text": "(정말 이래도 괜찮을까...)",
+           "speaker": "{name}"
+          },
+          {
+           "goal": "인쇄소로 돌아가자 (왼쪽 길) · 고발장 일이 남았다면 위원회부터"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "coach",
+     "label": "관문 앞 마차",
+     "cases": [
+      {
+       "if": {
+        "flag": "clair_follow"
+       },
+       "steps": [
+        {
+         "text": "관문 병사가 통행증을 훑어보더니 마차를 보내 준다.",
+         "speaker": "안내"
+        },
+        {
+         "text": "고마워요, {name}. 이 은혜 잊지 않을게요. 언젠가... 편지할게요!",
+         "speaker": "클레르"
+        },
+        {
+         "take": "pass",
+         "give": "ribbon",
+         "flag": [
+          "clair_saved",
+          "clair_gone"
+         ],
+         "unflag": "clair_follow",
+         "effect": "sparkle",
+         "text": "마차가 어둠 속으로 사라졌다. 클레르는 무사히 파리를 빠져나갔다."
+        },
+        {
+         "goal": "인쇄소로 돌아가자 (왼쪽 길) · 고발장 일이 남았다면 위원회부터"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "관문 앞에 마차 한 대가 서 있다. 통행증 없이는 아무도 못 나간다."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "patrol1",
+     "label": "순찰대",
+     "steps": [
+      {
+       "text": "통행증 검사다! ...견습생이군. 가 봐.",
+       "speaker": "순찰대"
+      }
+     ]
+    },
+    {
+     "id": "patrol2",
+     "label": "순찰대",
+     "steps": [
+      {
+       "text": "밤에는 돌아다니지 마라.",
+       "speaker": "순찰대"
+      }
+     ]
+    },
+    {
+     "id": "patrol3",
+     "label": "순찰대",
+     "steps": [
+      {
+       "text": "수상한 자를 보면 신고하라.",
+       "speaker": "순찰대"
+      }
+     ]
+    },
+    {
+     "id": "patrol4",
+     "label": "순찰대",
+     "steps": [
+      {
+       "text": "관문은 통행증이 있어야 나간다.",
+       "speaker": "순찰대"
+      }
+     ]
+    },
+    {
+     "id": "sansculotte",
+     "label": "상퀼로트",
+     "steps": [
+      {
+       "text": "빵 최고 가격제 덕에 빵은 살 만해졌지. 그래도 이렇게 매일 사람이 잡혀가니... 요즘은 로베스피에르도 무섭다.",
+       "speaker": "상퀼로트"
+      }
+     ]
+    },
+    {
+     "id": "manuscript",
+     "label": "떨어진 원고",
+     "cases": [
+      {
+       "if": {
+        "noItem": "flyer4"
+       },
+       "steps": [
+        {
+         "give": "flyer4",
+         "effect": "sparkle",
+         "target": "manuscript",
+         "text": "숨은 전단지 ④ '늙은 코르들리에'를 찾았다!"
+        },
+        {
+         "picture": "cu_flyer4",
+         "text": "카미유 데물랭의 신문 「늙은 코르들리에」. '관용 위원회를 만들자'고 공포 정치를 멈추자고 썼다. 데물랭은 1794년 4월 처형되었다."
+        },
+        {
+         "if": {
+          "items": [
+           "flyer1",
+           "flyer2",
+           "flyer3",
+           "flyer4",
+           "flyer5",
+           "flyer6"
+          ]
+         },
+         "then": [
+          {
+           "flag": "all_flyers"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "빈 상자."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "to_shop",
+     "label": "인쇄소로",
+     "cases": [
+      {
+       "if": {
+        "flag": "clair_follow"
+       },
+       "steps": [
+        {
+         "text": "거긴 인쇄소 쪽이잖아요. 관문은 동쪽이에요!",
+         "speaker": "클레르"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flags": [
+         "q_evidence",
+         "clair_decided"
+        ]
+       },
+       "steps": [
+        {
+         "go": "shop",
+         "x": 14,
+         "y": 10,
+         "dir": "up",
+         "fade": "black"
+        },
+        {
+         "text": "무사했구나! 위원회에서 내가 무혐의래. 네 덕분이다, {name}.",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "if": {
+          "flag": "clair_saved"
+         },
+         "then": [
+          {
+           "text": "아저씨... 클레르는 무사히 파리를 빠져나갔어요.",
+           "speaker": "{name}"
+          }
+         ],
+         "else": [
+          {
+           "text": "아저씨... 클레르를 도와주지 못했어요.",
+           "speaker": "{name}"
+          }
+         ]
+        },
+        {
+         "text": "그리고 방금 들어온 소식이다. 1794년 7월 27일, 혁명력으로 테르미도르 9일... 국민 공회가 로베스피에르를 체포했대!",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "flag": [
+          "ch3_print",
+          "press_mark"
+         ],
+         "goal": "인쇄기에서 1면을 찍자"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "아직 할 일이 있어. (위원회 고발장 · 클레르)",
+         "speaker": "{name}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "coronation",
+   "bgm": "France_Empire",
+   "name": "회상 · 1804년 12월 2일, 노트르담 대성당",
+   "map": 9,
+   "memory": true,
+   "tint": [
+    40,
+    14,
+    -34,
+    255
+   ],
+   "older": true,
+   "start": [
+    14,
+    11,
+    "up"
+   ],
+   "enter": [
+    {
+     "text": "(회상 장면) 촛불 수천 개, 금빛 옷, 오르간 소리. 대성당이 사람들로 가득하다."
+    },
+    {
+     "goal": "대관식의 숨은 이야기 3가지 찾기 → 화가 다비드에게"
+    }
+   ],
+   "hotspots": [
+    {
+     "id": "pope",
+     "label": "교황 비오 7세",
+     "mark": "?",
+     "markIf": {
+      "noFlag": "co1"
+     },
+     "steps": [
+      {
+       "text": "나는 로마에서 먼 길을 왔소. 그런데 황제는 내가 관을 씌우는 것을 원치 않는구려. 나는 축복만 할 뿐...",
+       "speaker": "교황 비오 7세"
+      },
+      {
+       "flag": "co1",
+       "text": "숨은 이야기 ① 교황은 로마에서 왔지만, 관을 씌우지는 않았다."
+      }
+     ]
+    },
+    {
+     "id": "napoleon",
+     "label": "나폴레옹",
+     "mark": "?",
+     "markIf": {
+      "noFlag": "co2"
+     },
+     "steps": [
+      {
+       "text": "이 관은 누가 준 것이 아니다. 내가 스스로 얻은 것이다!",
+       "speaker": "나폴레옹"
+      },
+      {
+       "flag": "co2",
+       "effect": "flash",
+       "text": "숨은 이야기 ② 나폴레옹은 제단에서 관을 집어 '스스로' 머리에 썼다."
+      }
+     ]
+    },
+    {
+     "id": "josephine",
+     "label": "조제핀",
+     "mark": "?",
+     "markIf": {
+      "noFlag": "co3"
+     },
+     "steps": [
+      {
+       "text": "황제께서 이제 제 머리에 관을 씌워 주실 거예요. 다비드는 바로 이 순간을 그리기로 했대요.",
+       "speaker": "조제핀"
+      },
+      {
+       "flag": "co3",
+       "text": "숨은 이야기 ③ 다비드의 그림은 나폴레옹이 조제핀에게 관을 씌우는 장면이다."
+      }
+     ]
+    },
+    {
+     "id": "cardinal",
+     "label": "추기경",
+     "steps": [
+      {
+       "text": "황제가 교황을 불러 놓고 스스로 관을 쓰다니... 교회보다 자신이 위라는 뜻이겠지.",
+       "speaker": "추기경"
+      }
+     ]
+    },
+    {
+     "id": "marshal",
+     "label": "원수 (장군)",
+     "steps": [
+      {
+       "text": "황제 폐하 만세! 국민 투표에서 350만 명 넘게 찬성했다네.",
+       "speaker": "원수"
+      }
+     ]
+    },
+    {
+     "id": "lady",
+     "label": "귀부인",
+     "cases": [
+      {
+       "if": {
+        "item": "ribbon"
+       },
+       "steps": [
+        {
+         "text": "...{name}? 정말 {name}이에요? 나 클레르예요! 그때 덕분에 살았어요. 지금은 시골에서 아이들을 가르쳐요.",
+         "speaker": "클레르"
+        },
+        {
+         "text": "(클레르! 무사했구나. 가슴이 뭉클하다.)",
+         "speaker": "{name}"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "돌아온 망명 귀족 부인이다. \"황제께서 망명했던 귀족들도 돌아오게 해 주셨지요.\"",
+         "speaker": "귀부인"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "crowd",
+     "label": "구경꾼",
+     "steps": [
+      {
+       "text": "왕을 처형한 지 11년 만에 황제라니. 세상 참...",
+       "speaker": "구경꾼"
+      }
+     ]
+    },
+    {
+     "id": "altar",
+     "label": "제단",
+     "steps": [
+      {
+       "text": "금빛 제단. 왕관과 홀, 검이 놓여 있었다."
+      }
+     ]
+    },
+    {
+     "id": "david",
+     "label": "화가 다비드",
+     "mark": "!",
+     "markIf": {
+      "flags": [
+       "co1",
+       "co2",
+       "co3"
+      ],
+      "noFlag": "q_coro"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "q_coro"
+       },
+       "steps": [
+        {
+         "text": "그림은 3년쯤 걸릴 걸세. 가로 10m에 가까운 큰 그림이지.",
+         "speaker": "다비드"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flags": [
+         "co1",
+         "co2",
+         "co3"
+        ]
+       },
+       "steps": [
+        {
+         "text": "자네도 그림을 그리나? 이 장면을 기록하는 게 내 일이지. 맞혀 보게, 이 대관식에서 가장 중요한 뜻은?",
+         "speaker": "다비드"
+        },
+        {
+         "choice": [
+          "황제의 힘은 교회가 아니라 자기 자신(과 국민)에게서 나온다",
+          "교황이 프랑스의 주인이 되었다",
+          "왕정이 완전히 끝났다"
+         ],
+         "answer": 1,
+         "question": "나폴레옹이 스스로 관을 쓴 뜻은?",
+         "success": [
+          {
+           "solve": "q_coro",
+           "effect": "firework",
+           "target": "david",
+           "text": "다비드가 붓을 들며 웃는다. \"정답이야! 그래서 나는 황제가 황후에게 관을 씌우는 장면을 그리지.\""
+          },
+          {
+           "picture": "cu_src_coronation",
+           "text": "사료: 다비드 「나폴레옹 1세의 대관식」. 가운데 관을 든 나폴레옹, 무릎 꿇은 조제핀, 오른쪽에 앉은 교황 비오 7세를 찾아보자."
+          },
+          {
+           "goal": "기둥 뒤에 뭔가 있다? 살펴본 뒤 아래쪽으로 회상에서 나가자"
+          }
+         ],
+         "fail": [
+          {
+           "text": "흠, 숨은 이야기들을 다시 떠올려 보게.",
+           "speaker": "다비드"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "나는 지금 스케치 중이네. 이 성당의 숨은 이야기를 알아 오면 말해 주지.",
+         "speaker": "다비드"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "pillar",
+     "label": "구겨진 종이",
+     "visible": {
+      "noItem": "flyer5"
+     },
+     "steps": [
+      {
+       "give": "flyer5",
+       "effect": "sparkle",
+       "target": "pillar",
+       "text": "기둥 뒤에서 숨은 전단지 ⑤ '대륙 봉쇄령'을(를) 찾았다!"
+      },
+      {
+       "picture": "cu_flyer5",
+       "text": "가방의 '전단지'에서 다시 볼 수 있다. 전단지 6장을 모두 모으면 마지막에 특별한 일이 생긴다는데..."
+      },
+      {
+       "if": {
+        "items": [
+         "flyer1",
+         "flyer2",
+         "flyer3",
+         "flyer4",
+         "flyer5",
+         "flyer6"
+        ]
+       },
+       "then": [
+        {
+         "flag": "all_flyers",
+         "text": "전단지 6장을 모두 모았다! 마지막 호외에 실을 수 있겠다."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "exit",
+     "label": "회상에서 돌아가기",
+     "cases": [
+      {
+       "if": {
+        "flag": "q_coro"
+       },
+       "steps": [
+        {
+         "effect": "flash",
+         "text": "(회상이 끝났다.)"
+        },
+        {
+         "go": "shop",
+         "x": 14,
+         "y": 10,
+         "dir": "up",
+         "fade": "white"
+        },
+        {
+         "text": "교황 앞에서 스스로 관을 쓴 황제라... 이제 1면을 찍자.",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "flag": [
+          "ch4_print",
+          "press_mark"
+         ],
+         "goal": "인쇄기에서 1면을 찍자"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "아직 숨은 이야기를 다 찾지 못했어.",
+         "speaker": "{name}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "russia",
+   "bgm": "France_Snow",
+   "name": "5장 · 1812년 11월, 러시아 설원",
+   "map": 10,
+   "camera": "follow",
+   "older": true,
+   "start": [
+    1,
+    9,
+    "right"
+   ],
+   "checkpoint": [
+    3,
+    9,
+    "right"
+   ],
+   "drain": {
+    "every": 1500,
+    "damage": 1,
+    "text": "으으... 너무 추워! (모닥불에서 몸을 녹이자)",
+    "if": {
+     "noFlag": "crossed"
+    }
+   },
+   "traps": {
+    "tiles": [
+     [
+      2,
+      7
+     ],
+     [
+      2,
+      12
+     ],
+     [
+      3,
+      8
+     ],
+     [
+      3,
+      13
+     ],
+     [
+      4,
+      4
+     ],
+     [
+      4,
+      9
+     ],
+     [
+      4,
+      14
+     ],
+     [
+      5,
+      5
+     ],
+     [
+      5,
+      10
+     ],
+     [
+      6,
+      11
+     ],
+     [
+      7,
+      7
+     ],
+     [
+      7,
+      12
+     ],
+     [
+      8,
+      3
+     ],
+     [
+      8,
+      8
+     ],
+     [
+      8,
+      13
+     ],
+     [
+      9,
+      4
+     ],
+     [
+      9,
+      14
+     ],
+     [
+      10,
+      5
+     ],
+     [
+      11,
+      6
+     ],
+     [
+      11,
+      11
+     ],
+     [
+      12,
+      7
+     ],
+     [
+      12,
+      12
+     ],
+     [
+      13,
+      3
+     ],
+     [
+      13,
+      8
+     ],
+     [
+      13,
+      13
+     ],
+     [
+      14,
+      4
+     ],
+     [
+      14,
+      9
+     ],
+     [
+      14,
+      14
+     ],
+     [
+      15,
+      5
+     ],
+     [
+      15,
+      10
+     ],
+     [
+      16,
+      6
+     ],
+     [
+      16,
+      11
+     ],
+     [
+      17,
+      7
+     ],
+     [
+      17,
+      12
+     ],
+     [
+      18,
+      3
+     ],
+     [
+      18,
+      8
+     ],
+     [
+      18,
+      13
+     ],
+     [
+      19,
+      4
+     ],
+     [
+      19,
+      9
+     ],
+     [
+      19,
+      14
+     ],
+     [
+      20,
+      5
+     ],
+     [
+      20,
+      10
+     ],
+     [
+      21,
+      6
+     ],
+     [
+      21,
+      11
+     ],
+     [
+      22,
+      7
+     ],
+     [
+      22,
+      12
+     ],
+     [
+      23,
+      3
+     ],
+     [
+      23,
+      8
+     ],
+     [
+      23,
+      13
+     ],
+     [
+      24,
+      4
+     ],
+     [
+      24,
+      9
+     ],
+     [
+      24,
+      14
+     ],
+     [
+      25,
+      5
+     ],
+     [
+      25,
+      10
+     ],
+     [
+      26,
+      11
+     ],
+     [
+      27,
+      12
+     ],
+     [
+      28,
+      3
+     ],
+     [
+      28,
+      8
+     ],
+     [
+      28,
+      13
+     ],
+     [
+      29,
+      4
+     ],
+     [
+      29,
+      9
+     ],
+     [
+      29,
+      14
+     ],
+     [
+      30,
+      5
+     ],
+     [
+      31,
+      6
+     ],
+     [
+      31,
+      11
+     ],
+     [
+      32,
+      7
+     ],
+     [
+      32,
+      12
+     ],
+     [
+      33,
+      3
+     ],
+     [
+      33,
+      8
+     ],
+     [
+      33,
+      13
+     ],
+     [
+      34,
+      4
+     ],
+     [
+      34,
+      9
+     ],
+     [
+      34,
+      14
+     ],
+     [
+      35,
+      5
+     ],
+     [
+      35,
+      10
+     ],
+     [
+      36,
+      6
+     ],
+     [
+      36,
+      11
+     ],
+     [
+      37,
+      7
+     ],
+     [
+      37,
+      12
+     ],
+     [
+      38,
+      3
+     ],
+     [
+      38,
+      8
+     ],
+     [
+      38,
+      13
+     ]
+    ],
+    "count": 10,
+    "kind": "pit"
+   },
+   "tint": [
+    -6,
+    -2,
+    14,
+    30
+   ],
+   "ko": [
+    {
+     "text": "눈 속에 쓰러졌다... 정신 차려! 모닥불 옆에서 다시.",
+     "speaker": "{name}"
+    },
+    {
+     "fullHeal": true
+    }
+   ],
+   "enter": [
+    {
+     "text": "영하 30도. 눈보라가 몰아친다. 모스크바는 불타 버렸고, 대육군은 서쪽으로 물러나는 중이다."
+    },
+    {
+     "text": "{name}! 정말 너구나! 인쇄병으로 왔다고? 이런 데서 만나다니...",
+     "speaker": "폴"
+    },
+    {
+     "text": "서쪽 베레지나강을 건너야 살 수 있어. 다리를 놓는 중이래. 같이 가자! 얼음 구덩이(숨어 있음)와 추위를 조심해.",
+     "speaker": "폴"
+    },
+    {
+     "text": "시간이 지나면 추위로 하트가 줄어요. 모닥불을 조사하면 하트가 다시 차요.",
+     "speaker": "안내"
+    },
+    {
+     "flag": "paul_follow"
+    },
+    {
+     "goal": "폴과 함께 서쪽(오른쪽) 베레지나강 다리로!"
+    }
+   ],
+   "hotspots": [
+    {
+     "id": "paul",
+     "label": "폴",
+     "follow": {
+      "flag": "paul_follow"
+     },
+     "visible": {
+      "noFlag": "paul_lost"
+     },
+     "steps": [
+      {
+       "text": "모스크바까지 갔을 때 러시아 사람들은 도시를 비우고 불태웠어. 우리는 먹을 것도 쉴 곳도 없이 돌아오는 길이야...",
+       "speaker": "폴"
+      },
+      {
+       "text": "60만 명이 떠났는데... 지금 몇이나 남았을까.",
+       "speaker": "폴"
+      }
+     ]
+    },
+    {
+     "id": "fire1",
+     "label": "모닥불",
+     "steps": [
+      {
+       "fullHeal": true,
+       "effect": "sparkle",
+       "target": "fire1",
+       "text": "모닥불에 몸을 녹였다. (하트가 다 찼다)"
+      }
+     ]
+    },
+    {
+     "id": "fire2",
+     "label": "모닥불",
+     "steps": [
+      {
+       "fullHeal": true,
+       "effect": "sparkle",
+       "target": "fire2",
+       "text": "모닥불에 몸을 녹였다. (하트가 다 찼다)"
+      }
+     ]
+    },
+    {
+     "id": "fire3",
+     "label": "모닥불",
+     "steps": [
+      {
+       "fullHeal": true,
+       "effect": "sparkle",
+       "target": "fire3",
+       "text": "모닥불에 몸을 녹였다. (하트가 다 찼다)"
+      }
+     ]
+    },
+    {
+     "id": "soldier1",
+     "label": "지친 병사",
+     "steps": [
+      {
+       "text": "말도 다 쓰러졌어. 대포도 버리고 왔지... 겨울이 이렇게 빨리 올 줄이야.",
+       "speaker": "지친 병사"
+      }
+     ]
+    },
+    {
+     "id": "soldier2",
+     "label": "외국인 병사",
+     "steps": [
+      {
+       "text": "나는 폴란드 출신이야. 대육군에는 프랑스 사람만 있는 게 아니야. 정복당한 나라에서 끌려온 병사도 많아.",
+       "speaker": "외국인 병사"
+      }
+     ]
+    },
+    {
+     "id": "officer",
+     "label": "공병 장교",
+     "steps": [
+      {
+       "text": "공병들이 얼음물에 들어가 다리를 놓았네. 러시아군이 오기 전에 건너야 해!",
+       "speaker": "공병 장교"
+      }
+     ]
+    },
+    {
+     "id": "wagon",
+     "label": "버려진 마차",
+     "cases": [
+      {
+       "if": {
+        "item": "gloves"
+       },
+       "steps": [
+        {
+         "text": "눈에 반쯤 묻힌 마차."
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "give": "gloves",
+         "effect": "sparkle",
+         "target": "wagon",
+         "text": "마차 안에서 털장갑을 찾았다! (추위로 하트가 천천히 줄어든다)"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "wagon2",
+     "label": "구겨진 종이",
+     "visible": {
+      "noItem": "flyer6"
+     },
+     "steps": [
+      {
+       "give": "flyer6",
+       "effect": "sparkle",
+       "target": "wagon2",
+       "text": "부서진 짐마차 속 인쇄 상자에서 숨은 전단지 ⑥ '대육군 제29호 공보'을(를) 찾았다!"
+      },
+      {
+       "picture": "cu_flyer6",
+       "text": "가방의 '전단지'에서 다시 볼 수 있다. 전단지 6장을 모두 모으면 마지막에 특별한 일이 생긴다는데..."
+      },
+      {
+       "if": {
+        "items": [
+         "flyer1",
+         "flyer2",
+         "flyer3",
+         "flyer4",
+         "flyer5",
+         "flyer6"
+        ]
+       },
+       "then": [
+        {
+         "flag": "all_flyers",
+         "text": "전단지 6장을 모두 모았다! 마지막 호외에 실을 수 있겠다."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "letter1",
+     "label": "눈 속의 상자",
+     "steps": [
+      {
+       "text": "모스크바에서 가져온 그림과 은그릇이 눈 속에 버려져 있다. 무거워서 버린 것이다."
+      }
+     ]
+    },
+    {
+     "id": "letter2",
+     "label": "눈 속의 상자",
+     "steps": [
+      {
+       "text": "'대륙 봉쇄령: 영국과의 무역 금지' 포고문 뭉치. 러시아가 이 명령을 어겨서 이 전쟁이 시작되었다."
+      }
+     ]
+    },
+    {
+     "id": "letter3",
+     "label": "눈 속의 상자",
+     "steps": [
+      {
+       "text": "얼어붙은 빵 한 덩이. 이것마저 못 먹을 만큼 단단하다."
+      }
+     ]
+    },
+    {
+     "id": "bridge_start",
+     "label": "베레지나 다리 앞",
+     "mark": "!",
+     "markIf": {
+      "noFlag": "crossed"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "crossed"
+       },
+       "steps": [
+        {
+         "text": "뒤에서 다리가 불타고 있다."
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "러시아군의 대포 소리가 가까워진다! 다리는 곧 불태워질 것이다.",
+         "speaker": "공병 장교"
+        },
+        {
+         "text": "{name}, 먼저 가! 바로 따라갈게! 다리 판자에 구멍(숨어 있음)이 났으니 조심해!",
+         "speaker": "폴"
+        },
+        {
+         "goal": "40초 안에 다리를 건너 건너편 깃발에 닿기!"
+        },
+        {
+         "mission": {
+          "targets": [
+           "bridge_end"
+          ],
+          "time": 40,
+          "label": "베레지나강 건너기",
+          "doneText": "건넜다!",
+          "success": [
+           {
+            "flag": [
+             "crossed",
+             "paul_lost"
+            ],
+            "unflag": "paul_follow",
+            "effect": "flash",
+            "text": "건넜다! 뒤돌아보니... 다리 위가 사람들로 아수라장이다. 폴이 보이지 않는다!"
+           },
+           {
+            "text": "폴! 폴!! ...대답이 없다.",
+            "speaker": "{name}"
+           },
+           {
+            "give": "paul_hat",
+            "text": "건너편 눈 위에 폴의 이각모가 떨어져 있었다."
+           },
+           {
+            "text": "1812년 11월 말, 베레지나강을 건너며 수많은 병사가 강물과 추위 속에 쓰러졌다."
+           },
+           {
+            "picture": "cu_src_minard",
+            "text": "사료: 미나르의 도표(1869). 띠의 굵기가 병사 수예요. 갈 때(빨간 띠) 42만 명이 돌아올 때(검은 띠) 1만 명으로 줄었어요."
+           },
+           {
+            "text": "이 띠 하나하나가 사람이었어... 나폴레옹의 몰락은 여기서 시작됐다.",
+            "speaker": "{name}"
+           },
+           {
+            "goal": "오른쪽 끝 길로 프랑스로 돌아가자"
+           }
+          ],
+          "fail": [
+           {
+            "text": "다리가 사람들로 막혔다! 다시 다리 앞에서 도전하자."
+           },
+           {
+            "go": "russia",
+            "x": 38,
+            "y": 9,
+            "dir": "right"
+           }
+          ],
+          "retry": false
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "bridge_end",
+     "label": "건너편 깃발",
+     "steps": [
+      {
+       "text": "건너편 둑의 깃발."
+      }
+     ]
+    },
+    {
+     "id": "to_west",
+     "label": "프랑스로",
+     "cases": [
+      {
+       "if": {
+        "flag": "crossed"
+       },
+       "steps": [
+        {
+         "text": "1812년 12월, 살아남은 병사들은 겨우 국경을 넘었다. 나는 폴의 모자를 품에 안고 파리로 돌아왔다."
+        },
+        {
+         "go": "shop",
+         "x": 14,
+         "y": 10,
+         "dir": "up",
+         "fade": "black"
+        },
+        {
+         "text": "살아 돌아왔구나...! 폴은... 그래, 그 모자를 벽에 걸어 두자.",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "text": "정부 공보에는 '황제 폐하의 건강은 아주 좋다'라고만 나왔단다. 우리는 네가 본 걸 그대로 찍자.",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "flag": [
+          "ch5_print",
+          "press_mark"
+         ],
+         "goal": "인쇄기에서 1면을 찍자"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "먼저 베레지나강을 건너야 해!",
+         "speaker": "{name}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "paris1815",
+   "bgm": "France_Street15",
+   "name": "6장 · 1815년 봄, 파리",
+   "map": 11,
+   "camera": "follow",
+   "older": true,
+   "start": [
+    2,
+    8,
+    "right"
+   ],
+   "enter": [
+    {
+     "text": "1815년 3월. 다시 왕이 돌아온 파리(루이 18세). 그런데 거리가 술렁인다. \"황제가 엘바섬을 탈출했대!\""
+    },
+    {
+     "goal": "신문 가판대를 조사하자"
+    }
+   ],
+   "hotspots": [
+    {
+     "id": "newsboy",
+     "label": "신문팔이 소년",
+     "steps": [
+      {
+       "text": "호외요, 호외! 같은 신문이 날마다 말을 바꿔요! 하하!",
+       "speaker": "신문팔이"
+      }
+     ]
+    },
+    {
+     "id": "kiosk",
+     "label": "신문 가판대",
+     "mark": "신문",
+     "markIf": {
+      "noFlag": "q_100"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "q_100"
+       },
+       "steps": [
+        {
+         "text": "나폴레옹은 다시 황제가 되었다. 이 '백일천하'는 겨우 100일쯤 이어졌다."
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "picture": "cu_headlines",
+         "text": "가판대에 같은 신문사의 머리기사 네 장이 뒤섞여 있다. 나폴레옹이 파리에 가까워질수록 말투가 바뀐다!"
+        },
+        {
+         "text": "이 머리기사들은 실제 기사가 아니라 '전해지는 이야기'예요. 그래도 언론이 권력에 따라 말을 바꾸는 모습을 잘 보여 줘요.",
+         "speaker": "안내"
+        },
+        {
+         "picture": "cu_headlines",
+         "dial": {
+          "labels": [
+           "첫째",
+           "둘째",
+           "셋째",
+           "넷째"
+          ],
+          "slots": [
+           [
+            "식인귀 (3.1)",
+            "괴물 (3.7)",
+            "찬탈자 (3.10)",
+            "황제 폐하 (3.20)"
+           ],
+           [
+            "식인귀 (3.1)",
+            "괴물 (3.7)",
+            "찬탈자 (3.10)",
+            "황제 폐하 (3.20)"
+           ],
+           [
+            "식인귀 (3.1)",
+            "괴물 (3.7)",
+            "찬탈자 (3.10)",
+            "황제 폐하 (3.20)"
+           ],
+           [
+            "식인귀 (3.1)",
+            "괴물 (3.7)",
+            "찬탈자 (3.10)",
+            "황제 폐하 (3.20)"
+           ]
+          ],
+          "answer": [
+           "식인귀 (3.1)",
+           "괴물 (3.7)",
+           "찬탈자 (3.10)",
+           "황제 폐하 (3.20)"
+          ],
+          "question": "날짜 순서대로 놓아 보자"
+         },
+         "success": [
+          {
+           "solve": "q_100",
+           "effect": "sparkle",
+           "target": "kiosk",
+           "text": "맞았다! '식인귀'가 '황제 폐하'가 되기까지 3주도 안 걸렸다."
+          },
+          {
+           "text": "나폴레옹이 다가올수록 신문이 비굴해지네. 우리 신문은 이러면 안 되겠다.",
+           "speaker": "{name}"
+          },
+          {
+           "goal": "전령에게 말을 걸어 소식을 듣자"
+          }
+         ],
+         "fail": [
+          {
+           "text": "순서가 틀렸다. 괄호 속 날짜를 보자. (다시 가판대를 조사)"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "royalist",
+     "label": "왕당파 신사",
+     "cases": [
+      {
+       "if": {
+        "flag": "q_wl"
+       },
+       "steps": [
+        {
+         "if": {
+          "flag": "q_vienna"
+         },
+         "then": [
+          {
+           "text": "유럽은 이제 혁명 이전의 질서로 돌아갈 걸세.",
+           "speaker": "왕당파 신사"
+          }
+         ],
+         "else": [
+          {
+           "text": "드디어 끝났군! 빈에서는 각국 대표들이 유럽 지도를 다시 그리고 있다네. 오스트리아의 메테르니히가 회의를 이끌지.",
+           "speaker": "왕당파 신사"
+          },
+          {
+           "picture": "cu_vienna",
+           "text": "빈 회의(1814~1815)의 원칙. 가장 알맞은 말을 고르자."
+          },
+          {
+           "choice": [
+            "혁명 이전의 왕조와 국경으로 되돌린다 (정통주의)",
+            "모든 민족이 스스로 나라를 세운다",
+            "나폴레옹 법전을 온 유럽에 퍼뜨린다"
+           ],
+           "answer": 1,
+           "question": "빈 회의가 내세운 원칙은?",
+           "success": [
+            {
+             "solve": "q_vienna",
+             "effect": "sparkle",
+             "target": "royalist",
+             "text": "그렇지! 이것을 '정통주의'라 하네. 그리고 자유주의·민족주의 운동은 억눌렀지."
+            },
+            {
+             "text": "(혁명 이전으로 되돌린다고... 하지만 사람들이 배운 '자유'와 '평등'까지 되돌릴 수 있을까?)",
+             "speaker": "{name}"
+            },
+            {
+             "goal": "오른쪽 끝 길로 인쇄소에 돌아가자"
+            }
+           ],
+           "fail": [
+            {
+             "text": "흠, 그건 빈 회의가 가장 싫어한 생각이라네. 다시 생각해 보게.",
+             "speaker": "왕당파 신사"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "백합 깃발(부르봉 왕가)이 다시 걸린 지 1년인데... 또 그 사람이 온다니!",
+         "speaker": "왕당파 신사"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "veteran",
+     "label": "늙은 근위병",
+     "steps": [
+      {
+       "text": "황제 폐하가 돌아오신다! 나는 아우스터리츠에서도 싸웠지.",
+       "speaker": "늙은 근위병"
+      }
+     ]
+    },
+    {
+     "id": "cafe_lady",
+     "label": "카페 손님",
+     "steps": [
+      {
+       "text": "전쟁, 또 전쟁... 이번엔 영국, 프로이센, 오스트리아, 러시아가 모두 모인대요.",
+       "speaker": "카페 손님"
+      }
+     ]
+    },
+    {
+     "id": "bourgeois",
+     "label": "상인",
+     "steps": [
+      {
+       "text": "나폴레옹 법전 덕에 내 가게와 재산은 지켜졌지. 그래서 나는 황제가 싫지만은 않아.",
+       "speaker": "상인"
+      }
+     ]
+    },
+    {
+     "id": "courier",
+     "label": "전령",
+     "mark": "!",
+     "markIf": {
+      "flag": "q_100",
+      "noFlag": "q_wl"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "q_wl"
+       },
+       "steps": [
+        {
+         "text": "나폴레옹은 대서양 한가운데 세인트헬레나섬으로 보내진다고 하오.",
+         "speaker": "전령"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "q_100"
+       },
+       "steps": [
+        {
+         "text": "벨기에에서 막 돌아왔소. 6월 18일, 워털루에서 큰 전투가 있었지. 나는 그날 명령서를 나르던 전령이었소.",
+         "speaker": "전령"
+        },
+        {
+         "text": "자네 기자라고? 그날 일을 들려주겠네. 눈을 감고 따라와 보게.",
+         "speaker": "전령"
+        },
+        {
+         "effect": "flash",
+         "text": "(전령의 이야기가 그림처럼 떠오른다... 회상: 1815년 6월 18일, 워털루)",
+         "se": "Move1"
+        },
+        {
+         "go": "waterloo",
+         "fade": "white"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "급한 소식을 전하러 가는 중이오.",
+         "speaker": "전령"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "to_shop",
+     "label": "인쇄소로",
+     "cases": [
+      {
+       "if": {
+        "flag": "q_vienna"
+       },
+       "steps": [
+        {
+         "go": "shop",
+         "x": 14,
+         "y": 10,
+         "dir": "up",
+         "fade": "black"
+        },
+        {
+         "text": "워털루와 빈 회의라... 이걸로 한 시대가 끝났구나. 마지막 1면을 찍자.",
+         "speaker": "뒤부아 아저씨"
+        },
+        {
+         "flag": [
+          "ch6_print",
+          "press_mark"
+         ],
+         "goal": "인쇄기에서 1면을 찍자"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "아직 거리에서 들을 소식이 남았어.",
+         "speaker": "{name}"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "waterloo",
+   "bgm": "France_Battle",
+   "name": "회상 · 1815년 6월 18일, 워털루",
+   "map": 12,
+   "memory": true,
+   "tint": [
+    40,
+    14,
+    -34,
+    255
+   ],
+   "older": true,
+   "camera": "follow",
+   "start": [
+    6,
+    10,
+    "right"
+   ],
+   "checkpoint": [
+    6,
+    10,
+    "right"
+   ],
+   "movers": [
+    {
+     "event": "rider1",
+     "route": [
+      [
+       10,
+       12
+      ],
+      [
+       36,
+       12
+      ]
+     ],
+     "speed": 4,
+     "loop": "pingpong",
+     "damage": 1
+    },
+    {
+     "event": "rider2",
+     "route": [
+      [
+       34,
+       7
+      ],
+      [
+       8,
+       7
+      ]
+     ],
+     "speed": 4,
+     "loop": "pingpong",
+     "damage": 1
+    }
+   ],
+   "ko": [
+    {
+     "text": "(전령) 기병대에 휩쓸렸군! 다시 가 보세.",
+     "speaker": "전령"
+    }
+   ],
+   "enter": [
+    {
+     "text": "(회상 장면) 전날 밤 내린 비로 들판이 진흙탕이다. 대포를 옮기기도 힘들어 전투가 늦게 시작되었다."
+    },
+    {
+     "text": "자네가 내 대신 명령서를 날라 보게. 진흙(갈색)에서는 걸음이 느려지고, 기병대는 피해야 하네!",
+     "speaker": "전령"
+    },
+    {
+     "goal": "프랑스군 장교에게 명령서를 받자"
+    }
+   ],
+   "hotspots": [
+    {
+     "id": "fr_officer",
+     "label": "프랑스군 장교",
+     "mark": "!",
+     "markIf": {
+      "noFlag": "wl_go"
+     },
+     "cases": [
+      {
+       "if": {
+        "flag": "wl_go"
+       },
+       "steps": [
+        {
+         "text": "어서! 시간이 없다!",
+         "speaker": "프랑스군 장교"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "황제의 명령이다! 우구몽 농가의 병사, 동쪽 언덕의 정찰병에게 이 명령서를 전하라. 90초 안에!",
+         "speaker": "프랑스군 장교"
+        },
+        {
+         "flag": "wl_go"
+        },
+        {
+         "mission": {
+          "targets": [
+           "farm_soldier",
+           "scout"
+          ],
+          "time": 90,
+          "label": "명령서 전달",
+          "doneText": "전달!",
+          "success": [
+           {
+            "solve": "wl_mission",
+            "effect": "sparkle",
+            "text": "명령서를 모두 전했다! 정찰병이 망원경으로 동쪽을 가리킨다."
+           },
+           {
+            "text": "동쪽 숲에서 군대가 온다! 저건... 우리가 기다리던 그루시 장군의 군대가 아니야!",
+            "speaker": "정찰병"
+           },
+           {
+            "goal": "정찰병에게 다시 말을 걸자"
+           }
+          ],
+          "fail": [
+           {
+            "text": "늦었다! 장교에게 다시 명령서를 받자.",
+            "speaker": "전령"
+           },
+           {
+            "unflag": "wl_go"
+           }
+          ],
+          "retry": false
+         }
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "napoleon",
+     "label": "나폴레옹",
+     "steps": [
+      {
+       "text": "그루시는 어디 있나! 비만 아니었으면...",
+       "speaker": "나폴레옹"
+      }
+     ]
+    },
+    {
+     "id": "farm_soldier",
+     "label": "우구몽 농가의 병사",
+     "steps": [
+      {
+       "text": "명령서 받았다! 이 농가는 영국군이 끝까지 지키고 있어.",
+       "speaker": "농가의 병사"
+      }
+     ]
+    },
+    {
+     "id": "en_officer",
+     "label": "영국군 장교 (멀리)",
+     "steps": [
+      {
+       "text": "(멀리서) 웰링턴 공작의 명령이다! 버텨라, 프로이센군이 올 때까지!",
+       "speaker": "영국군 장교"
+      }
+     ]
+    },
+    {
+     "id": "scout",
+     "label": "정찰병",
+     "cases": [
+      {
+       "if": {
+        "flag": "q_wl"
+       },
+       "steps": [
+        {
+         "text": "끝났다... 황제의 근위대마저 물러난다.",
+         "speaker": "정찰병"
+        }
+       ]
+      },
+      {
+       "if": {
+        "flag": "wl_mission"
+       },
+       "steps": [
+        {
+         "choice": [
+          "프로이센군 (블뤼허 장군)",
+          "프랑스군 (그루시 장군)",
+          "러시아군"
+         ],
+         "answer": 1,
+         "question": "오후에 동쪽에서 나타나 영국군을 도운 군대는?",
+         "success": [
+          {
+           "solve": "q_wl",
+           "effect": "flash",
+           "text": "프로이센군이 영국군과 합류했다! 저녁 무렵, 프랑스군은 무너졌다."
+          },
+          {
+           "text": "1815년 6월 18일 워털루 전투. 나폴레옹은 영국·프로이센 연합군에게 지고, 세인트헬레나섬으로 보내졌다."
+          },
+          {
+           "goal": "왼쪽 끝으로 회상에서 나가자"
+          }
+         ],
+         "fail": [
+          {
+           "text": "저 깃발은 그루시가 아니야! 다시 보자. (정찰병에게 다시 말 걸기)",
+           "speaker": "정찰병"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "동쪽을 살피는 중이다.",
+         "speaker": "정찰병"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": "rider1",
+     "label": "기병대",
+     "steps": [
+      {
+       "text": "말발굽 소리!"
+      }
+     ]
+    },
+    {
+     "id": "rider2",
+     "label": "기병대",
+     "steps": [
+      {
+       "text": "말발굽 소리!"
+      }
+     ]
+    },
+    {
+     "id": "exit",
+     "label": "회상에서 돌아가기",
+     "cases": [
+      {
+       "if": {
+        "flag": "q_wl"
+       },
+       "steps": [
+        {
+         "effect": "flash",
+         "text": "(회상이 끝났다.)"
+        },
+        {
+         "go": "paris1815",
+         "x": 2,
+         "y": 8,
+         "dir": "right",
+         "fade": "white"
+        },
+        {
+         "text": "그날 이후 나폴레옹의 시대는 끝났다네. 이제 빈에서 유럽의 앞날을 정한다지.",
+         "speaker": "전령"
+        },
+        {
+         "goal": "왕당파 신사에게 빈 회의 이야기를 듣자"
+        }
+       ]
+      },
+      {
+       "steps": [
+        {
+         "text": "아직 명령서를 다 전하지 못했네.",
+         "speaker": "전령"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "review": {
+  "url": "https://forms.gle/a4upZPjJ71bLr1by6",
+  "picture": "cu_review",
+  "speaker": "후기",
+  "text": "끝까지 함께해 줘서 고마워요! Enter나 클릭을 누르면 후기 페이지가 열려요."
+ },
+ "ending": {
+  "success": [
+   {
+    "text": "파리의 견습생 완료!",
+    "speaker": "기록"
+   }
+  ],
+  "fail": [
+   {
+    "text": "시간이 다 되었다."
+   }
+  ],
+  "summary": [
+   {
+    "picture": "cu_summary",
+    "speaker": "정리",
+    "text": "구체제의 모순 → 프랑스 혁명(1789) → 공화정과 공포 정치 → 나폴레옹 시대 → 빈 체제. 자유·평등·국민 주권의 생각은 이후 유럽의 자유주의·민족주의로 이어졌어요."
+   }
+  ]
+ }
+}
